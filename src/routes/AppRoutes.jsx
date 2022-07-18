@@ -1,10 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-// import CoasterDetails from '../pages/CoasterDetails/CoasterDetails'
-// import CoastersPage from '../pages/CoastersPage/CoastersPage'
-// import HomePage from '../pages/HomePage/HomePage'
-import LoginPage from '../pages/LoginPage/LoginPage'
-// import NewCoasterPage from '../pages/NewCoasterPage/NewCoasterPage'
-import SignupPage from '../pages/SignupPage/SignupPage'
+import SignupPage from './../pages/SignupPage/SignupPage'
 
 const AppRoutes = () => {
 
@@ -15,7 +10,7 @@ const AppRoutes = () => {
             <Route path="/crear" element={<NewCoasterPage />} />
             <Route path="/detalles/:coaster_id" element={<CoasterDetails />} /> */}
             <Route path="/registro" element={<SignupPage />} />
-            <Route path="/iniciar-sesion" element={<LoginPage />} />
+            <Route path="/iniciar-sesion" element={<h1>Funciona registro</h1>} />
         </Routes>
     )
 }
