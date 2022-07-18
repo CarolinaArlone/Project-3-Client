@@ -1,14 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import AppRoutes from './routes/AppRoutes'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Navigation from './components/Navigation/Navigation'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <AppRoutes />
-      </header>
-    </div>
+    <>
+
+      <Navigation className='Navigation' />
+
+      <AppRoutes />
+
+    </>
   );
 }
 
