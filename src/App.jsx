@@ -1,10 +1,12 @@
-import './App.css';
+import './App.css'
+import AppRoutes from './routes/AppRoutes'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <h1>VAAAAA</h1>
+        <AppRoutes />
       </header>
     </div>
   );
