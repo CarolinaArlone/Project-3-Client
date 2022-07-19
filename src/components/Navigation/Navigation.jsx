@@ -11,24 +11,52 @@ const Navigation = () => {
         logoutUser()
     }
 
+    const isAdmin = (user) => {
+        if (user?.role === 'ADMIN') {
+            return <Link to='/'><Nav.Link as="span">Crear coche</Nav.Link></Link>
+        }
+    }
+
     return (
         <Navbar className='Navigation' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Link to='/'><Navbar.Brand href="">Te-Llevo</Navbar.Brand></Link>
+                <Container className='img-logo'>
+                    <Link to='/'><Navbar.Brand as='span'>
+                        <img
+                            src='./../../../logo_white.png'
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="Te Llevo logo"
+                        />
+                    </Navbar.Brand></Link>
+                </Container>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
-                        <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                            <Link to='/iniciar-sesion'><NavDropdown.Item as="span">Iniciar sesión</NavDropdown.Item></Link>
-                            <Link to='/iniciar-sesion'><NavDropdown.Item as="span">Mi Perfil</NavDropdown.Item></Link>
-                            <NavDropdown.Divider />
-                            <Nav.Link onClick={logout}><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Nav.Link>
-                        </NavDropdown>
+                    <Nav className="ms-auto navbar-option">
+
+                        {isAdmin(user)}
+
+                        {
+                            !user
+                                ?
+                                <>
+                                    <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
+                                    <Link to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
+                                </>
+                                :
+                                <>
+                                    <NavDropdown title="Opciones" id="collasible-nav-dropdown">
+                                        <Link to='/iniciar-sesion'><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
+                                        <NavDropdown.Divider />
+                                        <Nav.Link onClick={logout}><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Nav.Link>
+                                    </NavDropdown>
+                                </>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 }
 

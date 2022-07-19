@@ -1,3 +1,17 @@
-.Navigation {
+.Navigation, button {
   background-color: #1f1f68 !important;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+.img-logo img {
+  width: 18%;
+}
+
+.navbar-option span {
+  text-align: center;
+  width: 120px;
+}
+
