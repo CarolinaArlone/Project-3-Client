@@ -4,6 +4,7 @@ import SignupPage from './../pages/SignupPage/SignupPage'
 import MyProfilePage from '../pages/MyProfilePage/MyProfilePage'
 import BookingPage from '../pages/BookingPage/BookingPage'
 import PaymentPage from '../pages/PaymentPage/PaymentPage'
+import HomePage from '../pages/HomePage/HomePage'
 
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path="/miperfil" element={<MyProfilePage />} />
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
+            <Route path="/" element={<HomePage />} />
         </Routes>
     )
 }
