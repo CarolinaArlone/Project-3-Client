@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
 
@@ -10,26 +11,13 @@ const Navigation = () => {
                 <Navbar.Brand href="#home">Te-Llevo</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">Regístrate</Nav.Link>
-                        <Nav.Link href="#pricing">Iniciar sesión</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                    <Nav className="ms-auto">
+                        <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
+                        <NavDropdown title="Mi Perfil" id="collasible-nav-dropdown">
+                            <Link to='/iniciar-sesion'><NavDropdown.Item as="span">Iniciar sesión</NavDropdown.Item></Link>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
+                            <Link to='/'><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Link>
                         </NavDropdown>
-                    </Nav>
-                    <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
