@@ -7,6 +7,8 @@ const AuthContext = createContext()
 const AuthProviderWrapper = (props) => {
 
     const [user, setUser] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
 
     const navigate = useNavigate()
 
@@ -20,14 +22,18 @@ const AuthProviderWrapper = (props) => {
 
         authService
             .verify(token)
-            .then(({ data }) => setUser(data))
-            .catch(err => console.error('hay un error', err))
+            .then(({ data }) => {
+                setUser(data)
+                setIsLoading(false)
+            })
+            .catch(err => logoutUser())
     }
 
     const logoutUser = () => {
         setUser(null)
         localStorage.removeItem('authToken')
         navigate('/iniciar-sesion')
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -35,7 +41,7 @@ const AuthProviderWrapper = (props) => {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ user, storeToken, authenticateUser, logoutUser }}>
+        <AuthContext.Provider value={{ isLoading, user, storeToken, authenticateUser, logoutUser }}>
             {props.children}
         </AuthContext.Provider>
     )

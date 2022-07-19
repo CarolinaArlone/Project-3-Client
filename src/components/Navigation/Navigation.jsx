@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
+import Loader from '../Loader/Loader'
 
 const Navigation = () => {
 
@@ -41,6 +42,7 @@ const Navigation = () => {
                             !user
                                 ?
                                 <>
+                                
                                     <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
                                     <Link to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
                                 </>
