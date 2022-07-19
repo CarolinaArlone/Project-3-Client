@@ -30,7 +30,7 @@ const LoginForm = () => {
             .then(({ data }) => {
                 storeToken(data.authToken)
                 authenticateUser()
-                navigate('/registro')
+                navigate('/')
                 //setShowMessage({ show: true, title: `Bienvenid@!`, text: 'Sesión iniciada correctamnete' })
             })
             .catch(err => console.log(err))
