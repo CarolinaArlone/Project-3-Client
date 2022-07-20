@@ -9,7 +9,6 @@ const CreateCarPage = () => {
             <Row>
                 <Col>
                     <h1>Crear coches</h1>
-
                 </Col>
             </Row>
         </Container>

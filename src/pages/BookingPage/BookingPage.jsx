@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
-
+import BookingCalendar from './../../components/Calendar/Calendar'
+import Calendar from './../../components/Calendar/Calendar'
 
 const BookingPage = () => {
 
@@ -9,7 +10,10 @@ const BookingPage = () => {
             <Row>
                 <Col>
                     <h1>Reservas</h1>
+                </Col>
 
+                <Col>
+                    <BookingCalendar />
                 </Col>
             </Row>
         </Container>
