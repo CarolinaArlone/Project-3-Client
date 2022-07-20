@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
+import CarForm from './../../components/CarForm/CarForm'
 
 
 const CreateCarPage = () => {
@@ -12,6 +13,8 @@ const CreateCarPage = () => {
 
                 </Col>
             </Row>
+
+            <CarForm />
         </Container>
 
     )
