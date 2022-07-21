@@ -14,7 +14,7 @@ const Navigation = () => {
 
     const isAdmin = (user) => {
         if (user?.role === 'ADMIN') {
-            return <Link to='/'><Nav.Link as="span">Crear coche</Nav.Link></Link>
+            return <Link to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
         }
     }
 
@@ -42,14 +42,14 @@ const Navigation = () => {
                             !user
                                 ?
                                 <>
-                                
+
                                     <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
                                     <Link to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
                                 </>
                                 :
                                 <>
                                     <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                                        <Link to='/iniciar-sesion'><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
+                                        <Link to='/miperfil'><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
                                         <NavDropdown.Divider />
                                         <Nav.Link onClick={logout}><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Nav.Link>
                                     </NavDropdown>

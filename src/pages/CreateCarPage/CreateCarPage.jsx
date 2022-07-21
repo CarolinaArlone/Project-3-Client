@@ -10,7 +10,11 @@ const CreateCarPage = () => {
         <Container>
             <h1>Crear coches</h1>
 
-            <CarForm />
+            <Container className='margin-creater-form'>
+                <CarForm />
+            </Container>
+
+
         </Container>
 
     )
