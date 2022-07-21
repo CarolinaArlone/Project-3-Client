@@ -1,43 +1,37 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import { useState } from "react"
-
+import { useState, useContext } from "react"
+import { CarContext } from '../../context/cars.context'
+import MapMarker from './MapMarker/MapMarker'
 
 const MapContainer = () => {
 
-    const [selected, setSelected] = useState({});
+    const [selected, setSelected] = useState({})
 
-    const onSelect = item => {
+    const { cars } = useContext(CarContext)
+
+    console.log('cars array ', cars)
+
+    /* const onSelect = item => {
         setSelected(item);
     }
-
-    const locations = [
-        {
-            title: "coche 1",
-            location: {
-                lat: 40.393414136642654,
-                lng: -3.697484403235343
-            },
-        },
-        {
-            title: "coche 2",
-            location: {
-                lat: 40.39277297605926,
-                lng: -3.696996186968523
-            },
-        },
-
-    ]
-
-    const location1 = {
-        name: "coche 1",
-        location: {
-            lat: 40.393414136642654,
-            lng: - 3.697484403235343
-        },
-    }
-
-
+ */
+    /*    const locations = [
+           {
+               title: "coche 1",
+               location: {
+                   lat: 40.393414136642654,
+                   lng: -3.697484403235343
+               },
+           },
+           {
+               title: "coche 2",
+               location: {
+                   lat: 40.39277297605926,
+                   lng: -3.696996186968523
+               },
+           },
+       ] */
 
     const mapStyles = {
         height: "100vh",
@@ -50,34 +44,27 @@ const MapContainer = () => {
 
     return (
 
-
         <LoadScript
             googleMapsApiKey='AIzaSyDLf7y6k5PGx_cjdDPGxNq8wy7UDjKTajo'>
 
             <GoogleMap
                 mapContainerStyle={mapStyles}
-                zoom={13}
+                zoom={12}
                 center={defaultCenter}>
 
-                {
-                    locations.map(item => {
+                <MapMarker />
 
+                {/*  {
+                    cars.map(car => {
                         return (
-                            <Marker key={item.title} position={item.location} />
-                        )
-                    })
-                }
-                {
-                    locations.map(item => {
-                        return (
-                            <Marker key={item.title}
-                                position={item.location}
-                                onClick={() => onSelect(item)}
+                            <Marker key={car._id}
+                                position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[0] }}
+                                onClick={() => onSelect(car)}
                             />
                         )
                     })
-                }
-                {
+                } */}
+                {/* {
                     selected.location &&
                     (
                         <InfoWindow
@@ -88,13 +75,12 @@ const MapContainer = () => {
                             <p>{selected.title}</p>
                         </InfoWindow>
                     )
-                }
-
+                } */}
             </GoogleMap>
 
         </LoadScript>
     )
 }
 
-export default MapContainer;
+export default MapContainer
 

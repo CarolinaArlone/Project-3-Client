@@ -1,31 +1,15 @@
-import carsService from "../../services/car.services"
 import CarsList from "../../components/CarList/CarList"
-import CarsForm from "../../components/CarForm/CarForm"
 import Loader from "../../components/Loader/Loader"
 
 import { AuthContext } from "../../context/auth.context"
 import { useEffect, useState, useContext } from "react"
 import { Container } from "react-bootstrap"
+import { CarContext } from '../../context/cars.context'
 
 
 const CarsListPage = () => {
 
-    const [cars, setCars] = useState([])
-
-    const { user } = useContext(AuthContext)
-
-
-    useEffect(() => {
-        loadCars()
-    }, [])
-
-    const loadCars = () => {
-
-        carsService
-            .getCars()
-            .then(({ data }) => setCars(data))
-            .catch(err => console.log(err))
-    }
+    const { cars } = useContext(CarContext)
 
     return (
 
@@ -33,7 +17,7 @@ const CarsListPage = () => {
 
             <h1>Lista de coches</h1>
             <hr />
-            {cars.length ? <CarsList cars={cars} /> : <Loader />}
+            {cars.length ? <CarsList /> : <Loader />}
 
         </Container>
 
