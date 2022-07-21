@@ -1,10 +1,18 @@
 import { useState } from 'react'
 import Calendar from 'react-calendar'
 import { DefinedRange } from 'react-date-range'
+import { DateRange } from 'react-date-range'
+import { addDays } from 'date-fns'
 
 const BookingCalendar = () => {
 
-    const [value, onChange] = useState(new Date());
+    const [state, setState] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(), 0),
+            key: 'selection'
+        }
+    ])
 
     return (
         <div className="Sample">
@@ -13,7 +21,18 @@ const BookingCalendar = () => {
             </header>
             <div className="Sample__container">
                 <main className="Sample__container__content">
-                    <Calendar onChange={onChange} showWeekNumbers value={value} />
+                    <DateRange
+                        editableDateInputs={true}
+                        onChange={item => setState([item.selection])}
+                        moveRangeOnFirstSelection={false}
+                        ranges={state}
+                        showPreview={true}
+                        rangeColors={'red'}
+                        date={'red'}
+                        
+                    />
+                    {/* <Calendar onChange={onChange} showWeekNumbers value={value} /> */}
+                
                 </main>
             </div>
         </div>
