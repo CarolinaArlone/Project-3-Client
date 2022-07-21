@@ -1,18 +1,30 @@
-import { Col, Row } from 'react-bootstrap'
-import CarCard from '';
+import { Col, Row, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import CarCard from './../CarCard/CarCard'
+
 
 const CarsList = ({ cars }) => {
 
     return (
         <Row>
-            {
-                cars.map(car => {
-                    return (
-                        <Col md={3} key={car._id} >
+            {cars.map(car => {
+                return (
+                    <>
+                        <Col key={car._id} >
+                            <h1>{car.brand}</h1>
                             <CarCard {...car} />
+                            <Link to={`/detalles/${car._id}`}>
+                                <div className="d-grid">
+                                    <Button variant="warning" size="sm" as="div">Editar</Button>
+                                </div> <br />
+                                <div className="d-grid">
+                                    <Button variant="danger" size="sm" as="div">Eliminar</Button>
+                                </div>
+                            </Link>
                         </Col>
-                    )
-                })
+                    </>
+                )
+            })
             }
         </Row>
     )

@@ -3,10 +3,12 @@ import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import carServices from './../../services/car.services'
 import uploadSevices from './../../services/upload.services'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 
-const CarForm = ({ fireFinalActions }) => {
+const CarForm = () => {
 
+    const navigate = useNavigate()
     const [carData, setCarData] = useState({
         brand: '',
         model: '',
@@ -23,6 +25,7 @@ const CarForm = ({ fireFinalActions }) => {
         longitude: ''
     })
 
+
     const [isLoading, setIsLoading] = useState(false)
 
     const handleChange = e => {
@@ -35,8 +38,10 @@ const CarForm = ({ fireFinalActions }) => {
 
         carServices
             .createCar(carData)
-            .then(() => fireFinalActions())
-            .catch(err => console.error(err))
+            .then(() => {
+                navigate('/')
+            })
+            .catch(err => console.log(err))
     }
 
     const handleFileInput = e => {
@@ -52,7 +57,7 @@ const CarForm = ({ fireFinalActions }) => {
                 setIsLoading(false)
                 setCarData({ ...carData, imageUrl: data.cloudinary_url })
             })
-            .catch(err => console.error(err))
+            .catch(err => console.log(err))
     }
 
     const { brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, carRating, latitude, longitude } = carData
@@ -131,8 +136,9 @@ const CarForm = ({ fireFinalActions }) => {
             </Form.Group>
 
             <div className="d-grid">
-                <Button variant="dark" type="submit" disabled={false/* isLoading */}>{/* {isLoading ? 'Un momento, por favor...' : 'Crear coche'} */}</Button>
+                <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Un momento, por favor...' : 'Crear coche'}</Button>
             </div>
+
 
         </Form>
     )

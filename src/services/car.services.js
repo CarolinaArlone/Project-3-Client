@@ -18,13 +18,13 @@ class CarService {
         })
     }
 
-    getAllCar() {
+    getCars() {
         return this.api.get('/all')
     }
 
     createCar(newCar) {
+        console.log('---------->', newCar)
 
-        console.log(newCar)
         return this.api.post('/create', newCar)
     }
 

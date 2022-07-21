@@ -4,14 +4,11 @@ import CarForm from './../../components/CarForm/CarForm'
 
 const CreateCarPage = () => {
 
+
     return (
 
         <Container>
-            <Row>
-                <Col>
-                    <h1>Crear coches</h1>
-                </Col>
-            </Row>
+            <h1>Crear coches</h1>
 
             <CarForm />
         </Container>
