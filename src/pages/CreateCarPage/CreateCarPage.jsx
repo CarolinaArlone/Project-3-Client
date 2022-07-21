@@ -13,7 +13,11 @@ const CreateCarPage = () => {
                 </Col>
             </Row>
 
-            <CarForm />
+            <Container className='margin-creater-form'>
+                <CarForm />
+            </Container>
+
+
         </Container>
 
     )
