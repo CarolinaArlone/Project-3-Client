@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
-// import Maps from '../../components/Maps/Maps'
+import MapContainer from '../../components/Maps/Maps'
+// import MapMarker from '../../components/Maps/MapMarker/MapMarker'
 import Loader from '../../components/Loader/Loader'
 
 
@@ -14,14 +15,9 @@ const MyProfilePage = () => {
                     <h1>Mi perfil</h1>
 
                 </Col>
-
-                {/* <Maps
-                    googleMapURL="http://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDLf7y6k5PGx_cjdDPGxNq8wy7UDjKTajo"
-                    containerElement={<div style={{ height: '400px' }} />}
-                    mapElement={<div style={{ height: '100%' }} />}
-                    loadingElement={<Loader />}
-
-                /> */}
+                {/* <MapMarker /> */}
+                <MapContainer/>
+                
             </Row>
         </Container>
 
