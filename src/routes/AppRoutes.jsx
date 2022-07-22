@@ -8,6 +8,10 @@ import HomePage from '../pages/HomePage/HomePage'
 import CreateCarPage from '../pages/CreateCarPage/CreateCarPage'
 import PrivateRoute from './PrivateRoute'
 import CarsListPage from '../pages/CarListPage/CarListPage'
+import CarEditPage from '../pages/CarEditPage/CarEditPage'
+
+
+
 
 
 
@@ -24,6 +28,7 @@ const AppRoutes = () => {
             <Route path="/iniciar-sesion" element={<LoginPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/lista-coches" element={<CarsListPage />} />
+            <Route path="/editar-coche/:car_id" element={<CarEditPage />} />
 
 
             <Route path="/crear" element={<PrivateRoute />}>
