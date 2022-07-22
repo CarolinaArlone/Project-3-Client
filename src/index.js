@@ -19,6 +19,5 @@ root.render(
       </CarsWrapper>
     </AuthProviderWrapper>
   </Router>
-
 )
 
