@@ -15,12 +15,12 @@ const AppRoutes = () => {
     return (
         <Routes>
 
+            <Route path="/" element={<HomePage />} />
             <Route path="/pago" element={<PaymentPage />} />
             <Route path="/mireserva" element={<BookingPage />} />
             <Route path="/miperfil" element={<MyProfilePage />} />
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
-            <Route path="/" element={<HomePage />} />
             <Route path="/lista-coches" element={<CarsListPage />} />
             <Route path="/editar-coche/:car_id" element={<CarEditPage />} />
             <Route path="/crear" element={<PrivateRoute />}>
