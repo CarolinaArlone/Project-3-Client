@@ -87,41 +87,80 @@ const CarForm = () => {
                 </Col>
 
             </Row>
+            <Row>
 
-            <Form.Group className="mb-3" controlId="imageUrl">
-                <Form.Label>Imagen (Archivo)</Form.Label>
-                <Form.Control type="file" onChange={handleFileInput} name="imageUrl" />
-            </Form.Group>
+                <Col>
 
-            <Form.Group className="mb-3" controlId="dayPrice">
-                <Form.Label>Precio/Día</Form.Label>
-                <Form.Control type="text" value={dayPrice} onChange={handleChange} name="dayPrice" />
-            </Form.Group>
+                    <Form.Group className="mb-3" controlId="imageUrl">
+                        <Form.Label>Imagen (Archivo)</Form.Label>
+                        <Form.Control type="file" onChange={handleFileInput} name="imageUrl" />
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="size">
-                <Form.Label>Tamaño</Form.Label>
-                <Form.Control type="text" value={size} onChange={handleChange} name="size" />
-            </Form.Group>
+                </Col>
 
-            <Form.Group className="mb-3" controlId="seats">
-                <Form.Label>Asientos</Form.Label>
-                <Form.Control type="text" value={seats} onChange={handleChange} name="seats" />
-            </Form.Group>
+                <Col>
+                    <Form.Group className="mb-3" controlId="dayPrice">
+                        <Form.Label>Precio/Día</Form.Label>
+                        <Form.Control type="number" value={dayPrice} onChange={handleChange} name="dayPrice" />
+                    </Form.Group>
+                </Col>
 
-            <Form.Group className="mb-3" controlId="transmission">
-                <Form.Label>Transmisión</Form.Label>
-                <Form.Control type="text" value={transmission} onChange={handleChange} name="transmission" />
-            </Form.Group>
+                <Col>
+                    <Form.Group className="mb-3" controlId="size">
+                        <Form.Label>Tamaño</Form.Label>
+                        <Form.Select aria-label="Default select example" type="text" name="size" onChange={handleChange}>
+                            <option value="">Seleccion el tamaño del coche</option>
+                            <option value="SMALL">Coche pequeño</option>
+                            <option value="MEDIUM">Coche mediano</option>
+                            <option value="LARGE">Coche grande</option>
+                            <option value="FAMILY">Coche familiar</option>
+                            <option value="VAN">Furgoneta</option>
+                        </Form.Select>
+                    </Form.Group>
+                </Col>
+            </Row>
 
-            <Form.Group className="mb-3" controlId="fuelType">
-                <Form.Label>Tipo de combustible</Form.Label>
-                <Form.Control type="text" value={fuelType} onChange={handleChange} name="fuelType" />
-            </Form.Group>
+            <Row>
 
-            <Form.Group className="mb-3" controlId="carRating">
-                <Form.Label>Valoración</Form.Label>
-                <Form.Control type="text" value={carRating} onChange={handleChange} name="carRating" />
-            </Form.Group>
+                <Col>
+                    <Form.Group className="mb-3" controlId="seats">
+                        <Form.Label>Número de asientos</Form.Label>
+                        <Form.Control type="text" value={seats} onChange={handleChange} name="seats" />
+                    </Form.Group>
+                </Col>
+
+                <Col>
+                    <Form.Group className="mb-3" controlId="transmission">
+                        <Form.Label>Transmisión</Form.Label>
+                        <Form.Select aria-label="Default select example" type="text" name="transmission" onChange={handleChange}>
+                            <option value="">Seleccion el tipo de transmisión</option>
+                            <option value="MANUAL">Manual</option>
+                            <option value="AUTOMATIC">Automático</option>
+                        </Form.Select>
+                    </Form.Group>
+                </Col>
+
+                <Col>
+                    <Form.Group className="mb-3" controlId="fuelType">
+                        <Form.Label>Tipo de combustible</Form.Label>
+                        <Form.Select aria-label="Default select example" type="text" name="fuelType" onChange={handleChange}>
+                            <option value="">Seleccion el tipo de combustible</option>
+                            <option value="PETROL">Gasolina</option>
+                            <option value="DIESEL">Diesel</option>
+                            <option HYBRID="DIESEL">Hibrido</option>
+                            <option ELECTRIC="DIESEL">Eléctrico</option>
+                        </Form.Select>
+                    </Form.Group>
+                </Col>
+
+                <Col>
+                    <Form.Group className="mb-3" controlId="carRating">
+                        <Form.Label>Valoración</Form.Label>
+                        <Form.Control type="text" value={carRating} onChange={handleChange} name="carRating" />
+                    </Form.Group>
+                </Col>
+
+            </Row>
 
             <Row>
                 <Col>
