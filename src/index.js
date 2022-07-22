@@ -11,14 +11,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   // <React.StrictMode>
-    <Router>
-      <AuthProviderWrapper>
-        <ArrayCarsWrapper>
+  <Router>
+    <AuthProviderWrapper>
+      <CarsWrapper>
         <App />
         <Footer />
-          </ArrayCarsWrapper>
-      </AuthProviderWrapper>
-    </Router>
+      </CarsWrapper>
+    </AuthProviderWrapper>
+  </Router>
   // </React.StrictMode>
 )
 

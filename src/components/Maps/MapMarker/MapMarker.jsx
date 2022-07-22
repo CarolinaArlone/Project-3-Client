@@ -13,8 +13,6 @@ const MapMarker = () => {
     }
 
     const navigate = useNavigate()
-
-
     const { cars } = useContext(CarContext)
 
     return (
