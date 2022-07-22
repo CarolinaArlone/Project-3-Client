@@ -59,20 +59,34 @@ const CarForm = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="brand">
-                <Form.Label>Marca</Form.Label>
-                <Form.Control type="text" value={brand} onChange={handleChange} name="brand" />
-            </Form.Group>
 
-            <Form.Group className="mb-3" controlId="model">
-                <Form.Label>Modelo</Form.Label>
-                <Form.Control type="text" value={model} onChange={handleChange} name="model" />
-            </Form.Group>
+            <Row>
+                <Col>
+                    <Form.Group className="mb-3" controlId="brand">
+                        <Form.Label>Marca</Form.Label>
+                        <Form.Control type="text" value={brand} onChange={handleChange} name="brand" />
+                    </Form.Group>
+                </Col>
 
-            <Form.Group className="mb-3" controlId="plate">
-                <Form.Label>Matrícula</Form.Label>
-                <Form.Control type="text" value={plate} onChange={handleChange} name="plate" />
-            </Form.Group>
+                <Col>
+
+                    <Form.Group className="mb-3" controlId="model">
+                        <Form.Label>Modelo</Form.Label>
+                        <Form.Control type="text" value={model} onChange={handleChange} name="model" />
+                    </Form.Group>
+
+                </Col>
+
+                <Col>
+                    <Form.Group className="mb-3" controlId="plate">
+                        <Form.Label>Matrícula</Form.Label>
+                        <Form.Control type="text" value={plate} onChange={handleChange} name="plate" />
+                    </Form.Group>
+
+
+                </Col>
+
+            </Row>
 
             <Form.Group className="mb-3" controlId="imageUrl">
                 <Form.Label>Imagen (Archivo)</Form.Label>

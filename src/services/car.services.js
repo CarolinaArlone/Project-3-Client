@@ -40,7 +40,7 @@ class CarService {
     }
 
     addCarReview(car_id) {
-        return this.api.post(`/${car_id}/add-review`)
+        return this.api.put(`/${car_id}/add-review`)
     }
 
 }

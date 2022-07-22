@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import CarCard from './../CarCard/CarCard'
 import { useContext } from 'react'
 import { CarContext } from '../../context/cars.context'
+import Loader from '../Loader/Loader'
+
 
 
 const CarsList = () => {
@@ -12,28 +14,20 @@ const CarsList = () => {
     return (
 
         <Row>
-            {cars.map(car => {
-                return (
-                    <Col key={car._id}>
+            {
+                cars.length
+                    ?
+                    cars.map(car => {
+                        return (
+                            <Col key={car._id} md={{ span: 3 }}>
 
-                        <h1>{car.brand}</h1>
+                                <CarCard {...car} />
 
-                        <CarCard {...car} />
-
-                        <Link to={`/editar-coche/${car._id}`}>
-
-                            <div className="d-grid">
-                                <Button variant="warning" size="sm" as="div">Editar</Button>
-                            </div> <br />
-
-                            <div className="d-grid">
-                                <Button variant="danger" size="sm" as="div">Eliminar</Button>
-                            </div>
-                        </Link>
-
-                    </Col>
-                )
-            })
+                            </Col>
+                        )
+                    })
+                    :
+                    <Loader />
             }
         </Row>
     )

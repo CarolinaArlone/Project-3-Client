@@ -14,7 +14,7 @@ const CarsWrapper = (props) => {
     const loadCars = () => {
         carService
             .getCars()
-            .then(({ data }) => setCars(data))
+            .then(({data}) => setCars(data))
             .catch(err => console.log(err))
     }
 
