@@ -8,21 +8,13 @@ import HomePage from '../pages/HomePage/HomePage'
 import CreateCarPage from '../pages/CreateCarPage/CreateCarPage'
 import PrivateRoute from './PrivateRoute'
 import CarsListPage from '../pages/CarListPage/CarListPage'
-import carsService from "../services/car.services"
-import { useState } from 'react'
+
+
+
 
 const AppRoutes = () => {
 
-    const [cars, setCars] = useState([])
-
-    const loadCars = () => {
-
-        carsService
-            .getCars(cars)
-            .then(({ cars }) => setCars(cars))
-            .catch(err => console.log(err))
-    }
-
+   
     return (
         <Routes>
 
@@ -32,7 +24,7 @@ const AppRoutes = () => {
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/lista-coches" element={<CarsListPage cars={cars} loadCars={loadCars} />} />
+            <Route path="/lista-coches" element={<CarsListPage/>} />
 
 
             <Route path="/crear" element={<PrivateRoute />}>

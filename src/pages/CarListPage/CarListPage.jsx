@@ -1,20 +1,17 @@
-
 import CarsList from "../../components/CarList/CarList"
 import Loader from "../../components/Loader/Loader"
-import { AuthContext } from "../../context/auth.context"
-import { useEffect, useState, useContext } from "react"
+import { useContext } from "react"
 import { Container } from "react-bootstrap"
+import { CarContext } from '../../context/cars.context'
 
 
 
-const CarsListPage = ({cars, loadCars}) => {
+const CarsListPage = () => {
 
 
-    useEffect(() => {
-        loadCars()
-    }, [])
-
+  
    
+    const { cars } = useContext(CarContext)
 
     return (
 
@@ -22,7 +19,7 @@ const CarsListPage = ({cars, loadCars}) => {
 
             <h1>Lista de coches</h1>
             <hr />
-            {cars.length ? <CarsList cars={cars} /> : <Loader />}
+            {cars.length ? <CarsList /> : <Loader />}
 
         </Container>
 
