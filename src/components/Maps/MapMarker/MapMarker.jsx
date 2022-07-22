@@ -1,6 +1,7 @@
 import { Marker, InfoWindow } from '@react-google-maps/api'
 import { useState, useContext } from "react"
 import { CarContext } from '../../../context/cars.context'
+import { useNavigate } from "react-router-dom"
 
 
 const MapMarker = () => {
@@ -10,6 +11,9 @@ const MapMarker = () => {
     const onSelect = item => {
         setSelected(item)
     }
+
+    const navigate = useNavigate()
+
 
     const { cars } = useContext(CarContext)
 
@@ -21,7 +25,7 @@ const MapMarker = () => {
 
                         <Marker key={car._id}
                             position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[1] }}
-                            onClick={() => onSelect(car)}
+                            onMouseOver={() => onSelect(car)}
                         />
                     )
                 })
@@ -37,6 +41,8 @@ const MapMarker = () => {
                         <>
                             <h6>{selected.brand}</h6>
                             <p>{selected.dayPrice}€</p>
+                            <h6 onClick={() => navigate('/mireserva')}>Reservar</h6>
+
                         </>
 
                     </InfoWindow>

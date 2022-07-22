@@ -11,24 +11,15 @@ import Footer from './components/Footer/Footer'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-<<<<<<< HEAD
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
       <AuthProviderWrapper>
+        <ArrayCarsWrapper>
         <App />
         <Footer />
+          </ArrayCarsWrapper>
       </AuthProviderWrapper>
     </Router>
-  </React.StrictMode>
-=======
-  <Router>
-    <AuthProviderWrapper>
-      <ArrayCarsWrapper>
-        <App />
-        <Footer />
-      </ArrayCarsWrapper>
-    </AuthProviderWrapper>
-  </Router>
->>>>>>> cb66de327ead50558edf3a63ddb9719225df7778
+  // </React.StrictMode>
 )
 

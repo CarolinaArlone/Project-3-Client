@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import carServices from './../../services/car.services'
 import uploadSevices from './../../services/upload.services'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const CarForm = () => {
@@ -39,7 +39,7 @@ const CarForm = () => {
         carServices
             .createCar(carData)
             .then(() => {
-                navigate('/')
+                navigate('/lista-coches')
             })
             .catch(err => console.log(err))
     }
