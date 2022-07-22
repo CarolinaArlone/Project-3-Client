@@ -1,14 +1,16 @@
 import CarsList from "../../components/CarList/CarList"
 import Loader from "../../components/Loader/Loader"
-
-import { AuthContext } from "../../context/auth.context"
-import { useEffect, useState, useContext } from "react"
+import { useContext } from "react"
 import { Container } from "react-bootstrap"
 import { CarContext } from '../../context/cars.context'
 
 
+
 const CarsListPage = () => {
 
+
+  
+   
     const { cars } = useContext(CarContext)
 
     return (

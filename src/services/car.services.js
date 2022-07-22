@@ -30,11 +30,11 @@ class CarService {
         return this.api.get(`/${car_id}`)
     }
 
-    editCar(car_id) {
-        return this.api.put(`/${car_id}/edit`)
+    editCar(car_id, carData) {
+        return this.api.put(`/${car_id}/edit`, carData)
     }
 
-    editCar(car_id) {
+    deleteCar(car_id) {
         return this.api.delete(`/${car_id}/delete`)
     }
 

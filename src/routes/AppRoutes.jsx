@@ -8,28 +8,16 @@ import HomePage from '../pages/HomePage/HomePage'
 import CreateCarPage from '../pages/CreateCarPage/CreateCarPage'
 import PrivateRoute from './PrivateRoute'
 import CarsListPage from '../pages/CarListPage/CarListPage'
-// import carService from '../services/car.services'
-// import { useEffect, useState } from 'react'
+import CarEditPage from '../pages/CarEditPage/CarEditPage'
+
+
+
+
 
 
 
 const AppRoutes = () => {
 
-   /*  const [cars, setCars] = useState([])
-
-    const loadCars = () => {
-
-        carService
-            .getCars()
-            .then(({ data }) => {
-                setCars(data)
-            })
-            .catch(err => console.log(err))
-    }
-
-    useEffect(() => {
-        loadCars()
-    }, []) */
 
     return (
         <Routes>
@@ -40,7 +28,8 @@ const AppRoutes = () => {
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/lista-coches" element={<CarsListPage/>} />
+            <Route path="/lista-coches" element={<CarsListPage />} />
+            <Route path="/editar-coche/:car_id" element={<CarEditPage />} />
 
 
             <Route path="/crear" element={<PrivateRoute />}>

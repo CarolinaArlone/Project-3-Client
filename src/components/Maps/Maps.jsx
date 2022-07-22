@@ -1,38 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { useState, useContext } from "react"
 import { CarContext } from '../../context/cars.context'
 import MapMarker from './MapMarker/MapMarker'
+import { Navigate } from 'react-router-dom';
 
 const MapContainer = () => {
+
+    const [update, setUpdate] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('update')
+            setUpdate(value => !value)
+        }, 4000)
+    }, [])
 
     const [selected, setSelected] = useState({})
 
     const { cars } = useContext(CarContext)
 
-    console.log('cars array ', cars)
+    console.log('cars array yey', cars)
 
-    /* const onSelect = item => {
+    const onSelect = item => {
         setSelected(item);
-    }
- */
-    /*    const locations = [
-           {
-               title: "coche 1",
-               location: {
-                   lat: 40.393414136642654,
-                   lng: -3.697484403235343
-               },
-           },
-           {
-               title: "coche 2",
-               location: {
-                   lat: 40.39277297605926,
-                   lng: -3.696996186968523
-               },
-           },
-       ] */
 
+    }
+
+    
     const mapStyles = {
         height: "100vh",
         width: "100%"
@@ -54,28 +49,17 @@ const MapContainer = () => {
 
                 <MapMarker />
 
-                {/*  {
+                {
                     cars.map(car => {
                         return (
                             <Marker key={car._id}
-                                position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[0] }}
+                                position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[1] }}
                                 onClick={() => onSelect(car)}
                             />
                         )
                     })
-                } */}
-                {/* {
-                    selected.location &&
-                    (
-                        <InfoWindow
-                            position={selected.location}
-                            clickable={true}
-                            onCloseClick={() => setSelected({})}
-                        >
-                            <p>{selected.title}</p>
-                        </InfoWindow>
-                    )
-                } */}
+                }
+                
             </GoogleMap>
 
         </LoadScript>
