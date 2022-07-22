@@ -1,18 +1,16 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
 
+
 const HomePage = () => {
 
     return (
 
-        <Container>
-            <Row>
-                <Col>
-                    <h1>Home</h1>
+        <section className='home'>
+            
+                    <img src='./../../../goto.png' alt="home" />
 
-                </Col>
-            </Row>
-        </Container>
+        </section>
 
     )
 }

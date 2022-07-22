@@ -1,40 +1,48 @@
-// import { GoogleMap, Marker } from '@react-google-maps/api';
+import { Marker, InfoWindow } from '@react-google-maps/api'
+import { useState, useContext } from "react"
+import { CarContext } from '../../../context/cars.context'
 
-// const MapMarker = () =>{
 
-//         const locations = [
-//         {
-//             name: "coche 1",
-//             location: {
-//                 lat: 40.393414136642654,
-//                 lng: - 3.697484403235343
-//             },
-//         },
-//         {
-//             name: "coche 2",
-//             location: {
-//                 lat: 40.39277297605926,  
-//                 lng: - 3.696996186968523
-//             },
-//         },
-       
-//     ]
 
-//     return (
-        
-//         <GoogleMap
-//           zoom = { 13}
-//           >
-//         {
-//             locations.map(item => {
-//                 return (
-//                     <Marker key={item.name} position={item.location} />
-//                 )
-//             })
-//         }
-//      </GoogleMap >
-//   )
 
-// }
+const MapMarker = () => {
 
-// export default MapMarker
+    const [selected, setSelected] = useState({})
+
+    const { cars } = useContext(CarContext)
+
+    console.log('cars array ', cars)
+
+    const onSelect = item => {
+        setSelected(item)
+    }
+
+    return (
+        <>
+            {
+                cars.map(car => {
+                    return (
+                        <Marker key={car._id}
+                            position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[1] }}
+                            onClick={() => onSelect(car)}
+                        />
+                    )
+                })
+            }
+            {
+                selected.location &&
+                (
+                    <InfoWindow
+                        position={selected.location}
+                        clickable={true}
+                        onCloseClick={() => setSelected({})}
+                    >
+                        <p>{selected.car.brand}</p>
+                    </InfoWindow>
+                )
+            }
+        </>
+    )
+}
+
+export default MapMarker

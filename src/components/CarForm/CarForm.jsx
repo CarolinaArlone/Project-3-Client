@@ -118,14 +118,14 @@ const CarForm = () => {
                 <Col>
                     <Form.Group className="mb-3" controlId="latitude">
                         <Form.Label>Latitud</Form.Label>
-                        <Form.Control type="number" value={latitude} onChange={handleChange} name="latitude" />
+                        <Form.Control type="text" value={latitude} onChange={handleChange} name="latitude" />
                     </Form.Group>
                 </Col>
 
                 <Col>
                     <Form.Group className="mb-3" controlId="longitude">
                         <Form.Label>Longitud</Form.Label>
-                        <Form.Control type="number" value={longitude} onChange={handleChange} name="longitude" />
+                        <Form.Control type="text" value={longitude} onChange={handleChange} name="longitude" />
                     </Form.Group>
                 </Col>
             </Row>

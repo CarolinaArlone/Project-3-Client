@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 const CarCard = ({ brand, model, description, imageUrl }) => {
 
-    console.log('----', imageUrl)
-
     return (
         <Card className="CarCard mb-4">
             <Card.Img variant="top" src={imageUrl} />

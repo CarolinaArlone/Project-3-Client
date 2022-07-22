@@ -23,8 +23,6 @@ class CarService {
     }
 
     createCar(newCar) {
-        console.log('---------->', newCar)
-
         return this.api.post('/create', newCar)
     }
 
