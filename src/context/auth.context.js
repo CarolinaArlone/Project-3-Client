@@ -9,7 +9,6 @@ const AuthProviderWrapper = (props) => {
     const [user, setUser] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
 
-
     const navigate = useNavigate()
 
     const storeToken = (token) => {
@@ -41,6 +40,7 @@ const AuthProviderWrapper = (props) => {
     }, [])
 
     return (
+
         <AuthContext.Provider value={{ isLoading, user, storeToken, authenticateUser, logoutUser }}>
             {props.children}
         </AuthContext.Provider>

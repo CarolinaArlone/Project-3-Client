@@ -21,7 +21,9 @@ const Navigation = () => {
     return (
         <Navbar className='Navigation' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
+
                 <Container className='img-logo'>
+
                     <Link to='/'><Navbar.Brand as='span'>
                         <img
                             src='./../../../logo_white.png'
@@ -31,13 +33,16 @@ const Navigation = () => {
                             alt="Te Llevo logo"
                         />
                     </Navbar.Brand></Link>
+
                 </Container>
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
                 <Navbar.Collapse id="responsive-navbar-nav">
+
                     <Nav className="ms-auto navbar-option">
 
                         {isAdmin(user)}
-
                         {
                             !user
                                 ?
@@ -56,10 +61,13 @@ const Navigation = () => {
                                 </>
                         }
                     </Nav>
+
                 </Navbar.Collapse>
+
             </Container>
+
         </Navbar >
-    );
+    )
 }
 
 export default Navigation;

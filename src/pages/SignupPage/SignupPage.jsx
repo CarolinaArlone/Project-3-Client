@@ -6,12 +6,19 @@ const SignupPage = () => {
     return (
 
         <Container>
+
             <Row>
+
                 <Col>
-                <h1>Registro</h1>
+
+                    <h1>Registro</h1>
+
                     <SignupForm />
+
                 </Col>
+
             </Row>
+
         </Container>
 
     )

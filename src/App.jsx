@@ -4,7 +4,9 @@ import AppRoutes from './routes/AppRoutes'
 import Navigation from './components/Navigation/Navigation'
 
 function App() {
+
   return (
+
     <>
 
       <Navigation className='Navigation' />
@@ -12,7 +14,8 @@ function App() {
       <AppRoutes />
 
     </>
-  );
+
+  )
 }
 
-export default App;
+export default App
