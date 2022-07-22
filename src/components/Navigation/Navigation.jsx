@@ -12,7 +12,7 @@ const Navigation = () => {
         logoutUser()
     }
 
-    const isAdmin = (user) => {
+    const isAdmin = () => {
         if (user?.role === 'ADMIN') {
             return <Link to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
         }
@@ -42,7 +42,7 @@ const Navigation = () => {
 
                     <Nav className="ms-auto navbar-option">
 
-                        {isAdmin(user)}
+                        {isAdmin()}
                         {
                             !user
                                 ?
