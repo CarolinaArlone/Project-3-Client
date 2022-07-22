@@ -1,17 +1,17 @@
+import './CarEditForm.css'
 import { Form, Button, Container } from 'react-bootstrap'
 import { useContext, useEffect, useState } from 'react'
-import CarService from '../../services/car.services'
 import uploadService from '../../services/upload.services'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader'
-import './CarEditForm.css'
 import { CarContext } from '../../context/cars.context'
 
 const CarEditForm = () => {
 
     const { car_id } = useParams()
     const navigate = useNavigate()
-    const { editCar } = useContext(CarContext)
+    const { editCar, getOneCar, oneCar } = useContext(CarContext)
+
     const [loadingImage, setLoadingImage] = useState(false)
     const [loadingCar, setLoadingCar] = useState(true)
 
@@ -38,14 +38,14 @@ const CarEditForm = () => {
 
     useEffect(() => {
 
-        CarService
-            .getOneCar(car_id)
+        getOneCar(car_id)
             .then(({ data }) => {
-
                 const {
                     brand, model, plate, description, imageUrl, dayPrice, size, seats,
                     transmission, fuelType, carRating, location
                 } = data
+
+                const [latitude, longitude] = location.coordinates
 
                 const editedCar = {
                     brand,
@@ -59,13 +59,15 @@ const CarEditForm = () => {
                     transmission,
                     fuelType,
                     carRating,
-                    latitude: location.coordinates[0],
-                    longitude: location.coordinates[1]
+                    latitude,
+                    longitude
                 }
-
                 setCarData(editedCar)
                 setLoadingCar(false)
             })
+            .catch(err => console.log(err))
+
+
     }, [])
 
     const handleInputChange = e => {
