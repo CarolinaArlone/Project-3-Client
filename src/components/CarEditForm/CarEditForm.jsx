@@ -1,19 +1,20 @@
 import { Form, Button, Container } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CarService from '../../services/car.services'
 import uploadService from '../../services/upload.services'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader'
-
-
+import './CarEditForm.css'
+import { CarContext } from '../../context/cars.context'
 
 const CarEditForm = () => {
 
     const { car_id } = useParams()
     const navigate = useNavigate()
-
+    const { editCar } = useContext(CarContext)
     const [loadingImage, setLoadingImage] = useState(false)
     const [loadingCar, setLoadingCar] = useState(true)
+
     const [carData, setCarData] = useState({
         brand: '',
         model: '',
@@ -30,8 +31,10 @@ const CarEditForm = () => {
         longitude: ''
     })
 
-    const { brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, carRating, latitude, longitude } = carData
-
+    const {
+        brand, model, plate, description, imageUrl, dayPrice, size, seats,
+        transmission, fuelType, carRating, latitude, longitude
+    } = carData
 
     useEffect(() => {
 
@@ -39,7 +42,10 @@ const CarEditForm = () => {
             .getOneCar(car_id)
             .then(({ data }) => {
 
-                const { brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, carRating, location } = data
+                const {
+                    brand, model, plate, description, imageUrl, dayPrice, size, seats,
+                    transmission, fuelType, carRating, location
+                } = data
 
                 const editedCar = {
                     brand,
@@ -63,20 +69,15 @@ const CarEditForm = () => {
     }, [])
 
     const handleInputChange = e => {
-        const { name, value } = e.target
 
-        setCarData({
-            ...carData,
-            [name]: value
-        })
+        const { name, value } = e.target
+        setCarData({ ...carData, [name]: value })
     }
 
     const uploadCarImage = e => {
 
         setLoadingImage(true)
-
         const uploadData = new FormData()
-
         uploadData.append('imageData', e.target.files[0])
 
         uploadService
@@ -90,13 +91,9 @@ const CarEditForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-
-        CarService
-            .putOneCar(car_id, carData)
-            .then(() => navigate('/lista-coches'))
-            .catch(err => console.log(err))
+        editCar(car_id, carData)
+        navigate('/lista-coches')
     }
-
 
     return (
         <>
@@ -105,7 +102,7 @@ const CarEditForm = () => {
                     ?
                     <Loader />
                     :
-                    <Container>
+                    <Container className='formEdit'>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" >
                                 <Form.Label>Marca</Form.Label>
@@ -172,7 +169,7 @@ const CarEditForm = () => {
                                 <Form.Control type="file" onChange={uploadCarImage} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Espere...' : 'guardar cambios'}
+                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}
 
                             </Button>
                         </Form>
@@ -180,7 +177,6 @@ const CarEditForm = () => {
             }
         </>
     )
-
 }
 
 export default CarEditForm

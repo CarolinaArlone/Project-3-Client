@@ -10,14 +10,7 @@ import PrivateRoute from './PrivateRoute'
 import CarsListPage from '../pages/CarListPage/CarListPage'
 import CarEditPage from '../pages/CarEditPage/CarEditPage'
 
-
-
-
-
-
-
 const AppRoutes = () => {
-
 
     return (
         <Routes>
@@ -30,11 +23,10 @@ const AppRoutes = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/lista-coches" element={<CarsListPage />} />
             <Route path="/editar-coche/:car_id" element={<CarEditPage />} />
-
-
             <Route path="/crear" element={<PrivateRoute />}>
                 <Route path="" element={<CreateCarPage />} />
             </Route>
+
         </Routes>
     )
 }

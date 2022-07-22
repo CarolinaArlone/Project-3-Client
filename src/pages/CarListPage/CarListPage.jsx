@@ -4,13 +4,8 @@ import { useContext } from "react"
 import { Container } from "react-bootstrap"
 import { CarContext } from '../../context/cars.context'
 
-
-
 const CarsListPage = () => {
 
-
-  
-   
     const { cars } = useContext(CarContext)
 
     return (
@@ -18,7 +13,9 @@ const CarsListPage = () => {
         <Container>
 
             <h1>Lista de coches</h1>
+
             <hr />
+
             {cars.length ? <CarsList /> : <Loader />}
 
         </Container>

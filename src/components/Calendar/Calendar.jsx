@@ -16,10 +16,13 @@ const BookingCalendar = () => {
 
     return (
         <div className="Sample">
+
             <header>
                 <h1>Selecciona la fecha de reserva</h1>
             </header>
+
             <div className="Sample__container">
+
                 <main className="Sample__container__content">
                     <DateRange
                         editableDateInputs={true}
@@ -29,12 +32,11 @@ const BookingCalendar = () => {
                         showPreview={true}
                         rangeColors={'red'}
                         date={'red'}
-                        
                     />
-                    {/* <Calendar onChange={onChange} showWeekNumbers value={value} /> */}
-                
                 </main>
+
             </div>
+
         </div>
     )
 }

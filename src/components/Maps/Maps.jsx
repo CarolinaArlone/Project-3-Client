@@ -7,6 +7,16 @@ const MapContainer = () => {
 
     const [update, setUpdate] = useState(false)
 
+<<<<<<< HEAD
+=======
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('update')
+            setUpdate(value => !value)
+        }, 4000)
+    }, [])
+
+>>>>>>> main
     const mapStyles = {
         height: "100vh",
         width: "100%"
@@ -27,7 +37,10 @@ const MapContainer = () => {
                 center={defaultCenter}>
 
                 <MapMarker />
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
             </GoogleMap>
 
         </LoadScript>
