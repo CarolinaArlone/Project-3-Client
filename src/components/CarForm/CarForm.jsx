@@ -2,11 +2,7 @@ import { useContext, useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import uploadSevices from './../../services/upload.services'
 import { useNavigate } from 'react-router-dom'
-<<<<<<< HEAD
-
-=======
 import { CarContext } from "../../context/cars.context"
->>>>>>> 6708d3a38a1b5c40e530642cced77e9198dddae7
 
 const CarForm = () => {
 

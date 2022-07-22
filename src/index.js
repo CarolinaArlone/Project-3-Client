@@ -13,10 +13,10 @@ root.render(
   // <React.StrictMode>
     <Router>
       <AuthProviderWrapper>
-        <ArrayCarsWrapper>
+        <CarsWrapper>
         <App />
         <Footer />
-          </ArrayCarsWrapper>
+          </CarsWrapper>
       </AuthProviderWrapper>
     </Router>
   // </React.StrictMode>
