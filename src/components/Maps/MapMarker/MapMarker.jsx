@@ -3,27 +3,24 @@ import { useState, useContext } from "react"
 import { CarContext } from '../../../context/cars.context'
 
 
-
-
 const MapMarker = () => {
 
     const [selected, setSelected] = useState({})
 
-    const { cars } = useContext(CarContext)
-
-    console.log('cars array ', cars)
-
     const onSelect = item => {
         setSelected(item)
     }
+
+    const { cars } = useContext(CarContext)
 
     return (
         <>
             {
                 cars.map(car => {
                     return (
+
                         <Marker key={car._id}
-                            position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[0] }}
+                            position={{ lat: car.location.coordinates[0], lng: car.location.coordinates[1] }}
                             onClick={() => onSelect(car)}
                         />
                     )
@@ -33,11 +30,15 @@ const MapMarker = () => {
                 selected.location &&
                 (
                     <InfoWindow
-                        position={selected.location}
+                        position={{ lat: selected.location.coordinates[0], lng: selected.location.coordinates[1] }}
                         clickable={true}
                         onCloseClick={() => setSelected({})}
                     >
-                        <p>{selected.title}</p>
+                        <>
+                            <h6>{selected.brand}</h6>
+                            <p>{selected.dayPrice}€</p>
+                        </>
+
                     </InfoWindow>
                 )
             }
