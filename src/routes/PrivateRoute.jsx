@@ -3,7 +3,6 @@ import { AuthContext } from "../context/auth.context"
 import { Navigate, Outlet } from 'react-router-dom'
 import Loader from "../components/Loader/Loader"
 
-
 function PrivateRoute() {
 
     const { isLoading, user } = useContext(AuthContext)

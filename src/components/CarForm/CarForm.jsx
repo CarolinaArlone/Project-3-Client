@@ -1,14 +1,14 @@
-// import { upload } from "@testing-library/user-event/dist/upload"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
-import carServices from './../../services/car.services'
 import uploadSevices from './../../services/upload.services'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
+import { CarContext } from "../../context/cars.context"
 
 const CarForm = () => {
 
+    const { createCar } = useContext(CarContext)
     const navigate = useNavigate()
+
     const [carData, setCarData] = useState({
         brand: '',
         model: '',
@@ -25,7 +25,6 @@ const CarForm = () => {
         longitude: ''
     })
 
-
     const [isLoading, setIsLoading] = useState(false)
 
     const handleChange = e => {
@@ -35,19 +34,12 @@ const CarForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-
-        carServices
-            .createCar(carData)
-            .then(() => {
-                navigate('/')
-            })
-            .catch(err => console.log(err))
+        createCar(carData)
+        navigate('/lista-coches')
     }
 
     const handleFileInput = e => {
-
         setIsLoading(true)
-
         const formData = new FormData()
         formData.append('imageData', e.target.files[0])
 
@@ -60,7 +52,10 @@ const CarForm = () => {
             .catch(err => console.log(err))
     }
 
-    const { brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, carRating, latitude, longitude } = carData
+    const {
+        brand, model, plate, description, imageUrl, dayPrice, size, seats,
+        transmission, fuelType, carRating, latitude, longitude
+    } = carData
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -138,11 +133,8 @@ const CarForm = () => {
             <div className="d-grid">
                 <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Un momento, por favor...' : 'Crear coche'}</Button>
             </div>
-
-
         </Form>
     )
 }
-
 
 export default CarForm

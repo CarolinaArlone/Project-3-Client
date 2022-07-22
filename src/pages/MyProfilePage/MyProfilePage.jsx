@@ -6,14 +6,19 @@ const MyProfilePage = () => {
     return (
 
         <Container>
+
             <Row>
+
                 <Col>
+
                     <h1>Mi perfil</h1>
 
                 </Col>
-                <MapContainer/>
+
+                <MapContainer />
 
             </Row>
+
         </Container>
 
     )
