@@ -24,6 +24,7 @@ const MapMarker = () => {
                                 lat: car.location.coordinates[0],
                                 lng: car.location.coordinates[1]
                             }}
+                            icon={{ url: 'https://res.cloudinary.com/djs7qv2pt/image/upload/v1658570113/marker_g0g3ti.png'}}
                             onMouseOver={() => onSelect(car)}
                         />
 
