@@ -10,12 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
 
-    <Router>
-      <AuthProviderWrapper>
-        <CarsWrapper>
-          <App />
-        </CarsWrapper>
-      </AuthProviderWrapper>
-    </Router>
-    
+  <Router>
+    <AuthProviderWrapper>
+      <CarsWrapper>
+        <App />
+        <Footer />
+      </CarsWrapper>
+    </AuthProviderWrapper>
+  </Router>
+
 )

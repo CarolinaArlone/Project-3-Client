@@ -6,7 +6,6 @@ const CarContext = createContext()
 const CarsWrapper = (props) => {
 
     const [cars, setCars] = useState([])
-    const [oneCar, setOneCar] = useState({})
 
     useEffect(() => {
         loadCars()
@@ -35,14 +34,18 @@ const CarsWrapper = (props) => {
 
     const getOneCar = (car_id) => {
         return carService.getOneCar(car_id)
-           
     }
 
-    const deleteCar = () => { }
+    const deleteCar = (car_id) => {
+        carService
+            .deleteCar(car_id)
+            .then(() => loadCars())
+            .catch(err => console.log(err))
+    }
 
     return (
 
-        <CarContext.Provider value={{ cars, loadCars, editCar, createCar, deleteCar, getOneCar, oneCar }}>
+        <CarContext.Provider value={{ cars, loadCars, editCar, createCar, deleteCar, getOneCar }}>
             {props.children}
         </CarContext.Provider>
     )

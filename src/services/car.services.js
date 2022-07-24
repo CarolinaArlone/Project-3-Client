@@ -31,7 +31,6 @@ class CarService {
     }
 
     editCar(car_id, carData) {
-        console.log('------', car_id, carData)
         return this.api.put(`/${car_id}/edit`, carData)
     }
 

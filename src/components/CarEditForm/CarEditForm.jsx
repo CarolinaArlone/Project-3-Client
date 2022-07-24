@@ -10,7 +10,7 @@ const CarEditForm = () => {
 
     const { car_id } = useParams()
     const navigate = useNavigate()
-    const { editCar, getOneCar, oneCar } = useContext(CarContext)
+    const { editCar, getOneCar } = useContext(CarContext)
 
     const [loadingImage, setLoadingImage] = useState(false)
     const [loadingCar, setLoadingCar] = useState(true)

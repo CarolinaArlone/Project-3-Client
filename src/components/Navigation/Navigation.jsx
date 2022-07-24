@@ -53,8 +53,8 @@ const Navigation = () => {
                                 :
                                 <>
                                     <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                                        <Link to='/miperfil'><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
-                                        <Link to='/mireserva'><NavDropdown.Item as="span">Mi reserva</NavDropdown.Item></Link>
+                                        <Link to={`/miperfil/${user._id}`}><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
+                                        {/* <Link to='/mireserva'><NavDropdown.Item as="span">Mi reserva</NavDropdown.Item></Link> */}
                                         <NavDropdown.Divider />
                                         <Nav.Link onClick={logout}><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Nav.Link>
                                     </NavDropdown>

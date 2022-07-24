@@ -1,8 +1,21 @@
 import './CarCard.css'
 import { Card, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { CarContext } from '../../context/cars.context'
 
-const CarCard = ({ brand, model, description, imageUrl, _id }) => {
+
+const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
+
+    const { deleteCar } = useContext(CarContext)
+    const navigate = useNavigate()
+
+    console.log('------------desde el handler----------', car_id)
+
+    const handleDelete = () => {
+        deleteCar(car_id)
+        navigate('/lista-coches')
+    }
 
     return (
 
@@ -18,17 +31,15 @@ const CarCard = ({ brand, model, description, imageUrl, _id }) => {
                 <Card.Text>{description}</Card.Text>
             </Card.Body>
 
-            <Link to={`/editar-coche/${_id}`}>
+            <Link to={`/editar-coche/${car_id}`}>
 
                 <div className="d-grid">
                     <Button variant="warning" size="sm" as="div">Editar</Button>
                 </div> <br />
-
-                <div className="d-grid">
-                    <Button variant="danger" size="sm" as="div">Eliminar</Button>
-                </div>
             </Link>
-
+            <div className="d-grid">
+                <Button onClick={handleDelete} variant="danger" size="sm" as="div">Eliminar</Button>
+            </div>
         </Card>
     )
 }

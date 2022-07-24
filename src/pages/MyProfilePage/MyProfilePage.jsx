@@ -1,5 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
+import EditUserProfile from '../../components/EditUserProfile/EditUserProfile'
 import MapContainer from '../../components/Maps/Maps'
+import UserProfile from '../../components/UserProfile/UserProfile'
 
 const MyProfilePage = () => {
 
@@ -12,11 +14,14 @@ const MyProfilePage = () => {
                 <Col>
 
                     <h1>Mi perfil</h1>
+                    <UserProfile />
+                   
 
                 </Col>
-
-                <MapContainer />
-
+                
+                <Col>
+                    <MapContainer />
+                </Col>
             </Row>
 
         </Container>
