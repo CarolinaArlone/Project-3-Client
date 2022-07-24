@@ -35,10 +35,15 @@ const CarsWrapper = (props) => {
 
     const getOneCar = (car_id) => {
         return carService.getOneCar(car_id)
-           
+
     }
 
-    const deleteCar = () => { }
+    const deleteCar = (car_id) => {
+        carService
+            .deleteCar(car_id)
+            .then(() => loadCars())
+            .catch(err => console.log(err))
+    }
 
     return (
 
