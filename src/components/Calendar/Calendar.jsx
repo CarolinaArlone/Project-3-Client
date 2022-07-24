@@ -4,7 +4,7 @@ import { DefinedRange } from 'react-date-range'
 import { DateRange } from 'react-date-range'
 import { addDays } from 'date-fns'
 
-const BookingCalendar = () => {
+const BookingCalendar = ({reservations}) => {
 
     const [state, setState] = useState([
         {
@@ -13,6 +13,8 @@ const BookingCalendar = () => {
             key: 'selection'
         }
     ])
+
+    console.log(state)
 
     return (
         <div className="Sample">
@@ -30,8 +32,8 @@ const BookingCalendar = () => {
                         moveRangeOnFirstSelection={false}
                         ranges={state}
                         showPreview={true}
-                        rangeColors={'red'}
-                        date={'red'}
+                        rangeColors={['#f33e5b', '#3ecf8e', '#fed14c']}
+                        
                     />
                 </main>
 

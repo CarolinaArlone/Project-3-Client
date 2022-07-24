@@ -17,8 +17,8 @@ const AppRoutes = () => {
 
             <Route path="/" element={<HomePage />} />
             <Route path="/pago" element={<PaymentPage />} />
-            <Route path="/mireserva" element={<BookingPage />} />
-            <Route path="/miperfil" element={<MyProfilePage />} />
+            <Route path="/mireserva/:car_id" element={<BookingPage />} />
+            <Route path="/miperfil/:user_id" element={<MyProfilePage />} />
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
             <Route path="/lista-coches" element={<CarsListPage />} />
