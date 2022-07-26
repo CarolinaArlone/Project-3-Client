@@ -1,0 +1,66 @@
+* {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+.Navigation {
+    background-color: #1f1f68 !important;
+}
+
+.navbar-option span {
+    text-align: center;
+    width: 120px;
+    text-decoration: none;
+}
+
+/* @media screen and (max-width: 960px) {
+    .Nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        margin-top: 32px;
+        opacity: 1;
+        left: -110%;
+        transition: all 0.5s ease;
+        color: white
+    }
+
+    .Nav-menu .active {
+        background: #1f1f68;
+        left: 1138px;
+        opacity: 1;
+        transition: all .5s ease;
+        z-index: 1;
+        color: white;
+    }
+
+    Nav.Link {
+        padding: 15px;
+        width: 100%;
+        display: table;
+        color: white;
+
+    }
+
+    .link-nav {
+        color: white;
+    }
+
+
+    .Nav-Icon {
+        display: block;
+        position: absolute;
+        top: -14px;
+        right: -1076px;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: white;
+
+    }
+} */

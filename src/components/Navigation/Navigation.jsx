@@ -3,6 +3,9 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import Loader from '../Loader/Loader'
+import Logo from './../Logo/Logo'
+import './Navigation.css'
+
 
 const Navigation = () => {
 
@@ -14,7 +17,7 @@ const Navigation = () => {
 
     const isAdmin = () => {
         if (user?.role === 'ADMIN') {
-            return <Link to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
+            return <Link className="text-decoration-none" to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
         }
     }
 
@@ -25,13 +28,7 @@ const Navigation = () => {
                 <Container className='img-logo'>
 
                     <Link to='/'><Navbar.Brand as='span'>
-                        <img
-                            src='./../../../logo_white.png'
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                            alt="Te Llevo logo"
-                        />
+                        <Logo />
                     </Navbar.Brand></Link>
 
                 </Container>
@@ -47,8 +44,8 @@ const Navigation = () => {
                             !user
                                 ?
                                 <>
-                                    <Link to='/registro'><Nav.Link as="span">Únete</Nav.Link></Link>
-                                    <Link to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
+                                    <Link className="text-decoration-none" to='/registro' ><Nav.Link as="span">Únete</Nav.Link></Link>
+                                    <Link className="text-decoration-none" to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
                                 </>
                                 :
                                 <>

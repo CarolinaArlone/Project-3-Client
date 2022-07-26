@@ -4,9 +4,11 @@ import uploadService from '../../services/upload.services'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader'
 import userService from '../../services/user.services'
+import './EditUserProfile.css'
 
 
-const EditUserProfile = ({formOpenHandler}) => {
+
+const EditUserProfile = ({ formOpenHandler }) => {
 
     const { user_id } = useParams()
     const [loadingImage, setLoadingImage] = useState(false)
