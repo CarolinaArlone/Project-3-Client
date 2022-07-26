@@ -1,11 +1,11 @@
+const CarDetails = ({ brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, reviews }) => {
 
-
-
-const CarDetails = ({ brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType }) => {
+    console.log('-reviews------', reviews)
 
     return (
         <>
             {{ imageUrl } ? <img src={imageUrl} alt="Foto coche" /> : <img src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658487043/elorqhew4azlkd7nvpwj.png" alt="Foto coche" />}
+            {<p>Reviews:  {reviews?.map(review => <p key={review._id}>{review.content}</p>)}</p>}
             <h1>Detalles del coche {brand}</h1>
             <h3>Modelo: {model}</h3>
             <h3>Matricula: {plate}</h3>

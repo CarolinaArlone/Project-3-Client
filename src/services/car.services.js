@@ -42,6 +42,10 @@ class CarService {
         return this.api.put(`/${car_id}/add-review`)
     }
 
+    bookedDates(car_id) {
+        return this.api.get(`/${car_id}/booked-dates`)
+    }
+
 }
 
 const carService = new CarService()

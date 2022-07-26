@@ -1,46 +1,62 @@
-import { useState } from 'react'
-import Calendar from 'react-calendar'
-import { DefinedRange } from 'react-date-range'
-import { DateRange } from 'react-date-range'
-import { addDays } from 'date-fns'
+import React, { useState, useRef, useCallback, useMemo, useEffect } from "react"
+import subDays from "date-fns/subDays"
+import DateRange from "react-date-range/dist/components/DateRange"
+import "react-date-range/dist/styles.css"
+import "./Calendar.scss"
+import { Container } from "react-bootstrap"
+import BookingButton from '../../components/BookingButton/BookingButton'
+import carService from '../../services/car.services'
+import TotalPay from "../TotalPay/TotalPay"
 
-const BookingCalendar = ({reservations}) => {
+const DatePicker = ({ car_id }) => {
 
-    const [state, setState] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 0),
-            key: 'selection'
-        }
-    ])
+    const now = useRef(new Date())
+    const [endDate, setEndDate] = useState(now.current);
+    const [startDate, setStartDate] = useState(subDays(now.current, 0))
+    const [bookedDates, setBookedDates] = useState([])
 
-    console.log(state)
+    const handleSelect = useCallback(({ selection: { startDate, endDate } }) => {
+        setStartDate(startDate)
+        setEndDate(endDate)
+    })
+
+    const ranges = useMemo(() => {
+        return [
+            {
+                startDate: startDate,
+                endDate: endDate,
+                key: "selection"
+            }
+        ];
+    }, [startDate, endDate])
+
+    useEffect(() => {
+        carService
+            .bookedDates(car_id)
+            .then(({ data }) => {
+                let dates = data.map(elm => new Date(elm))
+                setBookedDates(dates)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     return (
-        <div className="Sample">
-
-            <header>
-                <h1>Selecciona la fecha de reserva</h1>
-            </header>
-
-            <div className="Sample__container">
-
-                <main className="Sample__container__content">
-                    <DateRange
-                        editableDateInputs={true}
-                        onChange={item => setState([item.selection])}
-                        moveRangeOnFirstSelection={false}
-                        ranges={state}
-                        showPreview={true}
-                        rangeColors={['#f33e5b', '#3ecf8e', '#fed14c']}
-                        
-                    />
-                </main>
-
-            </div>
-
-        </div>
+        <Container>
+            {/* <p>{startDate.toDateString()} - {endDate.toDateString()}</p><br /> */}
+            <DateRange
+                moveRangeOnFirstSelection={false}
+                ranges={ranges}
+                onChange={handleSelect}
+                showDateDisplay={true}
+                // Use your current booking dates to disable dates in the calendar
+                disabledDates={bookedDates}
+                minDate={new Date()}
+            /* {...props} */
+            />
+            <TotalPay car_id={car_id} ranges={ranges} />
+            <BookingButton ranges={ranges} car_id={car_id} />
+        </Container>
     )
 }
 
-export default BookingCalendar
+export default DatePicker
