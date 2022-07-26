@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import userService from '../../services/user.services'
 import { useParams } from 'react-router-dom'
@@ -17,13 +17,17 @@ const UserProfile = () => {
         setFormOpen(state => !state)
     }
 
-    userService
-        .findUser(user_id)
-        .then(({ data }) => {
-            setUserData(data)
-        })
-        .catch(err => console.log(err))
+    useEffect(() => {
+        userService
+            .findUser(user_id)
+            .then(({ data }) => {
+                setUserData(data)
+            })
+            .catch(err => console.log(err))
 
+    }, [])
+
+    
     return (
 
         

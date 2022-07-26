@@ -10,7 +10,6 @@ const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
     const { deleteCar } = useContext(CarContext)
     const navigate = useNavigate()
 
-    console.log('------------desde el handler----------', car_id)
 
     const handleDelete = () => {
         deleteCar(car_id)
