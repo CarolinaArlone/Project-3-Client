@@ -1,7 +1,5 @@
 const CarDetails = ({ brand, model, plate, description, imageUrl, dayPrice, size, seats, transmission, fuelType, reviews }) => {
 
-    console.log('-reviews------', reviews)
-
     return (
         <>
             {{ imageUrl } ? <img src={imageUrl} alt="Foto coche" /> : <img src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658487043/elorqhew4azlkd7nvpwj.png" alt="Foto coche" />}
