@@ -1,5 +1,4 @@
 import { Col, Row, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import CarCard from './../CarCard/CarCard'
 import { useContext } from 'react'
 import { CarContext } from '../../context/cars.context'

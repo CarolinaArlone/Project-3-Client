@@ -1,11 +1,9 @@
-import { Container, Row, Col } from 'react-bootstrap'
-import BookingCalendar from './../../components/Calendar/Calendar'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import { CarContext } from '../../context/cars.context'
 import { useContext, useState, useEffect } from 'react'
 import CarDetails from '../../components/CarDetails/CarDetails'
 import { useParams } from 'react-router-dom'
-import DatePicker from '../../components/CalendarPrueba/CalendarPrueba'
-
+import DatePicker from '../../components/Calendar/Calendar'
 
 const BookingPage = () => {
 
@@ -18,13 +16,14 @@ const BookingPage = () => {
         getOneCar(car_id)
             .then(({ data }) => {
                 const {
-                    brand, model, plate, description, imageUrl, dayPrice, size, seats,
+                    reviews, brand, model, plate, description, imageUrl, dayPrice, size, seats,
                     transmission, fuelType, carRating, location
                 } = data
 
                 const [latitude, longitude] = location.coordinates
 
                 const editedCar = {
+                    reviews,
                     brand,
                     model,
                     plate,
@@ -57,9 +56,7 @@ const BookingPage = () => {
                 </Col>
 
                 <Col>
-                    {/* <BookingCalendar /> */}
-                    <DatePicker/> 
-                    
+                    <DatePicker car_id={car_id} />
                 </Col>
 
             </Row>

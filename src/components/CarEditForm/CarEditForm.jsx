@@ -1,5 +1,5 @@
 import './CarEditForm.css'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import { useContext, useEffect, useState } from 'react'
 import uploadService from '../../services/upload.services'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -105,61 +105,125 @@ const CarEditForm = () => {
                     <Loader />
                     :
                     <Container className='formEdit'>
+
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Marca</Form.Label>
-                                <Form.Control type="text" name="brand" value={brand} onChange={handleInputChange} />
-                            </Form.Group>
+                            <Row>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Modelo</Form.Label>
-                                <Form.Control type="text" name="model" value={model} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Marca</Form.Label>
+                                        <Form.Control type="text" name="brand" value={brand} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Matrícula</Form.Label>
-                                <Form.Control type="text" name="plate" value={plate} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Modelo</Form.Label>
+                                        <Form.Control type="text" name="model" value={model} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Precio/Día</Form.Label>
-                                <Form.Control type="text" name="dayPrice" value={dayPrice} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Matrícula</Form.Label>
+                                        <Form.Control type="text" name="plate" value={plate} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Tamaño</Form.Label>
-                                <Form.Control type="text" name="size" value={size} onChange={handleInputChange} />
-                            </Form.Group>
+                            <Row>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Asientos</Form.Label>
-                                <Form.Control type="text" name="seats" value={seats} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group controlId="imageUrl" className="mb-3">
+                                        <Form.Label> Imagen </Form.Label>
+                                        <Form.Control type="file" onChange={uploadCarImage} />
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Transmisión</Form.Label>
-                                <Form.Control type="text" name="transmission" value={transmission} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId='size' >
+                                        <Form.Label>Tamaño</Form.Label>
+                                        <Form.Select aria-label="Default select example" type="text" name="size" onChange={handleInputChange}>
+                                            <option value="">Seleccion el tamaño del coche</option>
+                                            <option value="SMALL">Coche pequeño</option>
+                                            <option value="MEDIUM">Coche mediano</option>
+                                            <option value="LARGE">Coche grande</option>
+                                            <option value="FAMILY">Coche familiar</option>
+                                            <option value="VAN">Furgoneta</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Tipo de combustible</Form.Label>
-                                <Form.Control type="text" name="fuelType" value={fuelType} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Asientos</Form.Label>
+                                        <Form.Control type="text" name="seats" value={seats} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Valoración</Form.Label>
-                                <Form.Control type="text" name="carRating" value={carRating} onChange={handleInputChange} />
-                            </Form.Group>
+                            </Row>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Latitud</Form.Label>
-                                <Form.Control type="text" name="latitude" value={latitude} onChange={handleInputChange} />
-                            </Form.Group>
+                            <Row>
 
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Longitud</Form.Label>
-                                <Form.Control type="text" name="longitude" value={longitude} onChange={handleInputChange} />
-                            </Form.Group>
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Precio/Día</Form.Label>
+                                        <Form.Control type="text" name="dayPrice" value={dayPrice} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
+
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="transmission">
+                                        <Form.Label>Transmisión</Form.Label>
+                                        <Form.Select aria-label="Default select example" type="text" name="transmission" onChange={handleInputChange}>
+                                            <option value="">Seleccion el tipo de transmisión</option>
+                                            <option value="MANUAL">Manual</option>
+                                            <option value="AUTOMATIC">Automático</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
+
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="fuelType" >
+                                        <Form.Label>Tipo de combustible</Form.Label>
+                                        <Form.Select aria-label="Default select example" type="text" name="fuelType" onChange={handleInputChange}>
+                                            <option value="">Seleccion el tipo de combustible</option>
+                                            <option value="PETROL">Gasolina</option>
+                                            <option value="DIESEL">Diesel</option>
+                                            <option HYBRID="DIESEL">Hibrido</option>
+                                            <option ELECTRIC="DIESEL">Eléctrico</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Col>
+
+                                <Col>
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Valoración</Form.Label>
+                                        <Form.Control type="text" name="carRating" value={carRating} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
+
+                            </Row>
+
+                            <Row>
+
+                                <Col>
+
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Latitud</Form.Label>
+                                        <Form.Control type="text" name="latitude" value={latitude} onChange={handleInputChange} />
+                                    </Form.Group>
+
+                                </Col>
+
+                                <Col>
+
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>Longitud</Form.Label>
+                                        <Form.Control type="text" name="longitude" value={longitude} onChange={handleInputChange} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
                             <Form.Group className="mb-3" >
                                 <Form.Label>Descripción</Form.Label>
@@ -171,9 +235,7 @@ const CarEditForm = () => {
                                 <Form.Control type="file" onChange={uploadCarImage} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}
-
-                            </Button>
+                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}</Button>
                         </Form>
                     </Container>
             }
@@ -182,3 +244,6 @@ const CarEditForm = () => {
 }
 
 export default CarEditForm
+
+
+

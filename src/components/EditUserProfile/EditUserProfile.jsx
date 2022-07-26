@@ -7,8 +7,7 @@ import userService from '../../services/user.services'
 import './EditUserProfile.css'
 
 
-
-const EditUserProfile = ({ formOpenHandler }) => {
+const EditUserProfile = ({ formOpenHandler, refreshUser }) => {
 
     const { user_id } = useParams()
     const [loadingImage, setLoadingImage] = useState(false)
@@ -58,8 +57,8 @@ const EditUserProfile = ({ formOpenHandler }) => {
 
         userService
             .editUser(user_id, userData)
-            .then(({ data }) => {
-                setUserData(data)
+            .then(() => {
+                refreshUser()
                 formOpenHandler()
             })
             .catch(err => console.log(err))
