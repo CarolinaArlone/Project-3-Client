@@ -26,7 +26,7 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
     const handleRatingInput = e => {
 
         const { value } = e.target
-        setContent( value )
+        setRate(value)
 
     }
 
@@ -45,9 +45,7 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
 
         carService
             .addCarRating({ car_id, rate })
-            .then(() => {
-                setRate(rate)
-            })
+            .then(() => console.log(rate))
             .catch(err => console.log(err.message))
 
     }
