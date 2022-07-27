@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import MapContainer from '../../components/Maps/Maps'
 import UserProfile from '../../components/UserProfile/UserProfile'
+import './MyProfilePage.css'
 
 const MyProfilePage = () => {
 
@@ -19,7 +20,9 @@ const MyProfilePage = () => {
                 </Col>
                 
                 <Col>
+                    <div className='profile-map'>
                     <MapContainer />
+                    </div>
                 </Col>
             </Row>
 

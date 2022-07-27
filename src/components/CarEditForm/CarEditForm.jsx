@@ -42,7 +42,7 @@ const CarEditForm = () => {
             .then(({ data }) => {
                 const {
                     brand, model, plate, description, imageUrl, dayPrice, size, seats,
-                    transmission, fuelType, carRating, location
+                    transmission, fuelType, location
                 } = data
 
                 const [latitude, longitude] = location.coordinates
@@ -58,7 +58,6 @@ const CarEditForm = () => {
                     seats,
                     transmission,
                     fuelType,
-                    carRating,
                     latitude,
                     longitude
                 }
@@ -193,13 +192,6 @@ const CarEditForm = () => {
                                             <option HYBRID="DIESEL">Hibrido</option>
                                             <option ELECTRIC="DIESEL">Eléctrico</option>
                                         </Form.Select>
-                                    </Form.Group>
-                                </Col>
-
-                                <Col>
-                                    <Form.Group className="mb-3" >
-                                        <Form.Label>Valoración</Form.Label>
-                                        <Form.Control type="text" name="carRating" value={carRating} onChange={handleInputChange} />
                                     </Form.Group>
                                 </Col>
 

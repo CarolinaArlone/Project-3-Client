@@ -66,7 +66,7 @@ const UserProfile = () => {
                                 const firstDate = new Date(booking.booking.startDate)
                                 const finalDate = new Date(booking.booking.endDate)
                                 return (
-                                    <Card.Title key={booking.booking._id}>
+                                    <Card.Title key={booking.booking._id} >
                                         - Coche {booking.car.brand} con matrícula {booking.car.plate} del {firstDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} al {finalDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
                                         <Button onClick={() => openModal(booking.car._id)} variant="success">Añadir reseña</Button>
                                     </Card.Title>

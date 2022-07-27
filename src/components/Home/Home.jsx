@@ -13,7 +13,6 @@ const Home = () => {
     return (
 
         <>
-            <div className='header' data-aos="zoom-in">
 
                 <Container>
                     <Row>
@@ -29,12 +28,11 @@ const Home = () => {
                         </Col>
 
                         <Col className="right-content">
-                            <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png" alt="image" />
+                        <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658917175/1_vljcns.png" alt="image" />
                         </Col>
                     </Row>
                 </Container>
 
-            </div>
         </>
     )
 }

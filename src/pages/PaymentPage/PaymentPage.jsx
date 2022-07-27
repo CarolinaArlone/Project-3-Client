@@ -13,17 +13,17 @@ const CARD_OPTIONS = {
     iconStyle: "solid",
     style: {
         base: {
-            iconColor: "#c4f0ff",
+            iconColor: "#070707",
             color: "#fff",
             fontWeight: 500,
             fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
             fontSize: "16px",
             fontSmoothing: "antialiased",
             ":-webkit-autofill": {
-                color: "#fce883"
+                color: "#070707"
             },
             "::placeholder": {
-                color: "#87bbfd"
+                color: "#070707"
             }
         },
         invalid: {
@@ -120,8 +120,6 @@ const CheckoutForm = () => {
         event.preventDefault();
 
         if (!stripe || !elements) {
-            // Stripe.js has not loaded yet. Make sure to disable
-            // form submission until Stripe.js has loaded.
             return;
         }
 
@@ -167,8 +165,7 @@ const CheckoutForm = () => {
                 Payment successful
             </div>
             <div className="ResultMessage">
-                Thanks for trying Stripe Elements. No money was charged, but we
-                generated a PaymentMethod: {paymentMethod.id}
+                Tu pago se ha efectuado con éxito. Muchas gracias.
             </div>
             <ResetButton onClick={reset} />
         </div>
@@ -224,10 +221,6 @@ const ELEMENTS_OPTIONS = {
     ]
 };
 
-
-
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
 const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 const PaymentPage = () => {
@@ -235,7 +228,9 @@ const PaymentPage = () => {
     return (
         <div className="AppWrapper">
             <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
+                <h3>Pasarela de pago</h3>
                 <CheckoutForm />
+                <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/DDKZDWGS6BEVZNZ6AN7DVONIFY.webp" alt="googlepay" />
             </Elements>
         </div>
     );

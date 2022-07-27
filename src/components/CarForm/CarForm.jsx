@@ -156,13 +156,6 @@ const CarForm = () => {
                         </Form.Group>
                     </Col>
 
-                    <Col>
-                        <Form.Group className="mb-3" controlId="carRating">
-                            <Form.Label>Valoración</Form.Label>
-                            <Form.Control type="text" value={carRating} onChange={handleChange} name="carRating" />
-                        </Form.Group>
-                    </Col>
-
                 </Row>
 
                 <Row>

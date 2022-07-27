@@ -22,7 +22,7 @@
 }
 
 
-/* @media screen and (max-width: 960px) {
+ /* @media screen and (max-width: 960px) {
     .Nav-menu {
         display: flex;
         flex-direction: column;
@@ -35,7 +35,9 @@
         color: white
     }
 
-    .Nav-menu .active {
+} */
+
+    /* .Nav-menu .active {
         background: #1f1f68;
         left: 1138px;
         opacity: 1;
@@ -68,4 +70,4 @@
         color: white;
 
     }
-} */
+} */ 
