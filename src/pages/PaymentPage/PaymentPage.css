@@ -32,9 +32,13 @@ body {
 }
 
 .AppWrapper {
+    margin-top:50px;
+    margin-left: 480px;
     width: 500px;
     height: 400px;
+    align-items: center;
     position: relative;
+    
 }
 
 @keyframes fade {
@@ -57,10 +61,10 @@ body {
     margin: 0 15px 20px;
     padding: 0;
     border-style: none;
-    background-color: #7795f8;
+    background-color: #95a7aa7f;
     will-change: opacity, transform;
-    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 #829fff;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 #95a7aa7f;
     border-radius: 4px;
 }
 
@@ -70,7 +74,7 @@ body {
     -ms-flex-align: center;
     align-items: center;
     margin-left: 15px;
-    border-top: 1px solid #819efc;
+    border-top: 1px solid #5f5f5f;
 }
 
 .FormRow:first-child {
@@ -81,7 +85,7 @@ body {
     width: 15%;
     min-width: 70px;
     padding: 11px 0;
-    color: #c4f0ff;
+    color: #000000;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -96,8 +100,7 @@ body {
 }
 
 .FormRowInput:-webkit-autofill {
-    -webkit-text-fill-color: #fce883;
-    /* Hack to hide the default webkit autofill */
+    -webkit-text-fill-color: #510051;
     transition: background-color 100000000s;
     animation: 1ms void-animation-out;
 }
@@ -106,13 +109,13 @@ body {
     font-size: 16px;
     width: 100%;
     padding: 11px 15px 11px 0;
-    color: #fff;
+    color: rgb(0, 0, 0);
     background-color: transparent;
     animation: 1ms void-animation-out;
 }
 
 .FormRowInput::placeholder {
-    color: #87bbfd;
+    color: #000000;
 }
 
 .StripeElement--webkit-autofill {
@@ -130,8 +133,8 @@ body {
     width: calc(100% - 30px);
     height: 40px;
     margin: 40px 15px 0;
-    background-color: #f6a4eb;
-    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    background-color: #1f1f68;
+    box-shadow: 0 6px 9px rgba(0, 0, 104, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
         inset 0 1px 0 #ffb9f6;
     border-radius: 4px;
     color: #fff;
@@ -159,12 +162,12 @@ body {
 .SubmitButton:disabled {
     opacity: 0.5;
     cursor: default;
-    background-color: #7795f8;
+    background-color: #001f85;
     box-shadow: none;
 }
 
 .ErrorMessage {
-    color: #fff;
+    color: rgb(113, 0, 0);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -199,9 +202,9 @@ body {
 }
 
 .ResultMessage {
-    color: #9cdbff;
-    font-size: 14px;
-    font-weight: 400;
+    color: #007a4b;
+    font-size: 25px;
+    font-weight: 600;
     margin-bottom: 25px;
     line-height: 1.6em;
     text-align: center;
@@ -211,4 +214,16 @@ body {
     border: 0;
     cursor: pointer;
     background: transparent;
+}
+
+.AppWrapper img{
+    width: 35%;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+.AppWrapper h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
