@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { useState } from "react"
 import MapMarker from './MapMarker/MapMarker'
+import './StylesMap'
 
 const MapContainer = () => {
 
@@ -9,7 +10,8 @@ const MapContainer = () => {
 
     const mapStyles = {
         height: "100vh",
-        width: "100%"
+        width: "100%",
+        
     }
 
     const defaultCenter = {
@@ -22,9 +24,10 @@ const MapContainer = () => {
         <LoadScript googleMapsApiKey='AIzaSyDLf7y6k5PGx_cjdDPGxNq8wy7UDjKTajo'>
 
             <GoogleMap
-                mapContainerStyle={mapStyles}
+                mapContainerStyle={mapStyles = retro}
                 zoom={12}
                 center={defaultCenter}>
+                    
 
                 <MapMarker />
                 

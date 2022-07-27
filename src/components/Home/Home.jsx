@@ -13,7 +13,6 @@ const Home = () => {
     return (
 
         <>
-            <div className='header' data-aos="zoom-in">
 
                 <Container>
                     <Row>
@@ -36,7 +35,6 @@ const Home = () => {
                     </Row>
                 </Container>
 
-            </div>
         </>
     )
 }

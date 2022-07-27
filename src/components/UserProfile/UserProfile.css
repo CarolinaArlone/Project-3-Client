@@ -1,0 +1,53 @@
+.userProfile {
+    object-fit: cover;
+    margin-bottom: 3em;
+}
+
+.title-userProfile-card {
+    font-size: 16px;
+}
+
+.carCard img {
+    object-fit: cover;
+    max-height: 270px;
+}
+
+.buttonProfile {
+    width: 60%;
+    display: block;
+    margin: 5px auto
+}
+
+.text-description {
+    height: 400px;
+}
+
+.eachPastBooking {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 20px;
+    margin: 10px 0px;
+    padding: 15px;
+}
+
+.eachPastBooking h6 {
+    font-size: 0.9rem;
+}
+
+.eachPastBooking .btn-success {
+    background-color: #6454a3;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+.btn-reseña:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid #6454a3 !important;
+}
+
+.btn-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

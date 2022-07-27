@@ -9,7 +9,7 @@ function CarouselHome() {
                 <Carousel.Item >
                     <img
                         className="d-block w-100"
-                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png"
+                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658917175/1_vljcns.png"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -21,7 +21,7 @@ function CarouselHome() {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png"
+                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658917175/2_ba6dn4.png"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -33,7 +33,7 @@ function CarouselHome() {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png"
+                        src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658917175/3_qhdfqy.png"
                         alt="Third slide"
                     />
 

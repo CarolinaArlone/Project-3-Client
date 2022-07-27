@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Card, Button, Modal } from 'react-bootstrap'
+import { Card, Button, Modal, Row, Col } from 'react-bootstrap'
 import userService from '../../services/user.services'
 import { useParams } from 'react-router-dom'
 import EditUserProfile from '../EditUserProfile/EditUserProfile'
 import bookingService from '../../services/booking.services'
 import ReviewForm from '../ReviewForm/ReviewForm'
+import './UserProfile.css'
 
 const UserProfile = () => {
 
@@ -53,40 +54,53 @@ const UserProfile = () => {
 
         <>
             {!formOpen ?
-                <Card className="UserCard mb-4">
-                    <Card.Img variant="top" src={userData.profileImg} />
+
+                < Card className="rounded mx-auto userProfile" >
+                    <Card.Header className="p-0">
+                        <Card.Img variant="top" src={userData.profileImg} />
+                    </Card.Header>
                     <Card.Body>
-                        <Card.Title>{userData.username}</Card.Title>
-                        <Card.Title>{userData.email}</Card.Title>
-                        <Button onClick={formOpenHandler} variant="primary">Editar</Button>
-                        <h3>Mis reservas</h3>
-                        {
-                            bookingData.map(booking => {
-                                const firstDate = new Date(booking.booking.startDate)
-                                const finalDate = new Date(booking.booking.endDate)
-                                return (
-                                    <Card.Title key={booking.booking._id}>
-                                        - Coche {booking.car.brand} con matrícula {booking.car.plate} del {firstDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} al {finalDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
-                                        <Button onClick={() => openModal(booking.car._id)} variant="success">Añadir reseña</Button>
-                                    </Card.Title>
-                                )
-
-                            })
-                        }
-
-                        <Modal show={showModal.show} onHide={closeModal}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Nueva reseña</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <ReviewForm car_id={showModal.carId} fireFinalActions={fireFinalActions} />
-                            </Modal.Body>
-                        </Modal>
-
-                    </Card.Body>
+                        <Card.Title className="text-dark title-userProfile-card">{userData.username}</Card.Title>
+                        <Card.Text className="text-dark title-userProfile-card">{userData.email}</Card.Text>
+                        <Button className='buttonProfile' onClick={formOpenHandler} variant="primary">Editar</Button>
+                    </Card.Body >
                 </Card >
                 :
                 <EditUserProfile formOpenHandler={formOpenHandler} refreshUser={loadUserInfo} />
+            }
+
+            <Modal show={showModal.show} onHide={closeModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Nueva reseña</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ReviewForm car_id={showModal.carId} fireFinalActions={fireFinalActions} />
+                </Modal.Body>
+            </Modal>
+
+            <h3>Mis reservas</h3>
+            {
+                bookingData.map(booking => {
+                    const firstDate = new Date(booking.booking.startDate)
+                    const finalDate = new Date(booking.booking.endDate)
+                    return (
+                        <div key={booking.booking._id} className="eachPastBooking">
+                            <Row>
+                                <Col md={8}>
+                                    <h6>{firstDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} - {finalDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</h6>
+                                    <h6> {booking.car.brand} ({booking.car.plate})</h6>
+                                </Col>
+
+                                <Col md={4} className="btn-column">
+                                    <Button className="btn-reseña" onClick={() => openModal(booking.car._id)} variant="success">Añadir reseña</Button>
+                                </Col>
+
+
+                            </Row>
+                        </div>
+                    )
+
+                })
             }
         </>
 

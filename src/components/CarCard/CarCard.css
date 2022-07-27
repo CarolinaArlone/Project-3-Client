@@ -17,10 +17,12 @@
     max-height: 270px;
 }
 
-/* .buttonCard .edit:hover {
-    text-decoration: none;
+.buttonCard {
+    width: 80%;
+    display: block;
+    margin: 5px auto
 }
 
-button {
+a:hover {
     text-decoration: none;
-} */
+}
