@@ -9,7 +9,7 @@ const Logo = () => {
         <div className="Logo">
 
             <Link to="/">
-                <Nav.Link as="span" ></Nav.Link>
+                <Nav.Link as="span" href='/'></Nav.Link>
                 <img src='\logo_white.png' alt="Te Llevo logo" />
             </Link>
 

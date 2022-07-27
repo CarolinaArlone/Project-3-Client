@@ -23,45 +23,35 @@ const Navigation = () => {
 
     return (
         <Navbar className='Navigation' collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
 
-                <Container className='img-logo'>
+            <Navbar.Brand href='/' ><img className="navLogo" src='\logo_white.png' alt="Te Llevo logo" /></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                    <Link to='/'><Navbar.Brand as='span'>
-                        <Logo />
-                    </Navbar.Brand></Link>
+            <Navbar.Collapse id="responsive-navbar-nav">
 
-                </Container>
+                <Nav className="ms-auto navbar-option">
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    {isAdmin()}
+                    {
+                        !user
+                            ?
+                            <>
+                                <Nav.Link className="first-anchor text-decoration-none" href='/registro' as="span">Únete</Nav.Link>
+                                <Nav.Link className="text-decoration-none" href='/iniciar-sesion' as="span">Iniciar sesión</Nav.Link>
+                            </>
+                            :
+                            <>
+                                <NavDropdown title="Opciones" id="collasible-nav-dropdown">
+                                    <NavDropdown.Item className="text-decoration-none" href={`/miperfil/${user._id}`}>Perfil de {user.username}</NavDropdown.Item>
+                                    {/* <Link to='/mireserva'><NavDropdown.Item as="span">Mi reserva</NavDropdown.Item></Link> */}
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item onClick={logout}>Cerrar sesión</NavDropdown.Item>
+                                </NavDropdown>
+                            </>
+                    }
+                </Nav>
 
-                <Navbar.Collapse id="responsive-navbar-nav">
-
-                    <Nav className="ms-auto navbar-option">
-
-                        {isAdmin()}
-                        {
-                            !user
-                                ?
-                                <>
-                                    <Link className="first-anchor text-decoration-none" to='/registro' ><Nav.Link as="span">Únete</Nav.Link></Link>
-                                    <Link className="text-decoration-none" to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
-                                </>
-                                :
-                                <>
-                                    <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                                        <Link to={`/miperfil/${user._id}`}><NavDropdown.Item as="span">Perfil de {user.username}</NavDropdown.Item></Link>
-                                        {/* <Link to='/mireserva'><NavDropdown.Item as="span">Mi reserva</NavDropdown.Item></Link> */}
-                                        <NavDropdown.Divider />
-                                        <Nav.Link onClick={logout}><NavDropdown.Item as="span">Cerrar sesión</NavDropdown.Item></Nav.Link>
-                                    </NavDropdown>
-                                </>
-                        }
-                    </Nav>
-
-                </Navbar.Collapse>
-
-            </Container>
+            </Navbar.Collapse>
 
         </Navbar >
     )

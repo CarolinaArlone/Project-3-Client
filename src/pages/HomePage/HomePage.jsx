@@ -8,14 +8,13 @@ const HomePage = () => {
 
     return (
 
-        <section className="HomePage">
-            <div className='home-img'>
-                {/* <img src='https://res.cloudinary.com/djs7qv2pt/image/upload/v1658734774/fondogoto_fme6si.webp' alt="home" /> */}
-                <Home />
-            </div>
+        <>
+
+            <Home />
             <CarouselHome />
             <Maps />
-        </section>
+
+        </>
 
     )
 }

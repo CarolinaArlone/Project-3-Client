@@ -6,7 +6,6 @@ import EditUserProfile from '../EditUserProfile/EditUserProfile'
 import bookingService from '../../services/booking.services'
 import ReviewForm from '../ReviewForm/ReviewForm'
 
-
 const UserProfile = () => {
 
     const [userData, setUserData] = useState({})

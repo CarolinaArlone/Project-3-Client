@@ -1,5 +1,5 @@
 * {
-   /*  width: 100%; */
+    /*  width: 100%; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +9,7 @@
 
 .Navigation {
     background-color: #1f1f68 !important;
+    padding: 15px 80px;
 }
 
 .navbar-option span {
@@ -21,6 +22,10 @@
     margin-left: 400px;
 }
 
+.navLogo {
+    width: 35%;
+    margin-left: 20px;
+}
 
 /* @media screen and (max-width: 960px) {
     .Nav-menu {

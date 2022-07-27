@@ -29,7 +29,9 @@ const Home = () => {
                         </Col>
 
                         <Col className="right-content">
-                            <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png" alt="image" />
+                            <div className="img-second">
+{/*                                 <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png" alt="image" />
+ */}                            </div>
                         </Col>
                     </Row>
                 </Container>

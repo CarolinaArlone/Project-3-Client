@@ -48,9 +48,26 @@ const MapMarker = () => {
                         <>
                             <h6>{selected.brand}</h6>
 
-                            <p>{selected.dayPrice}€</p>
+                            <img src={selected.imageUrl} alt="imagen coche" style={{
+                                width: '60px', 
+                            }} /> <br />
 
-                            <p onClick={() => navigate(`/mireserva/${selected._id}`)}>Reservar</p>
+                            <p>Precio: {selected.dayPrice}€</p>
+
+                            <p>Valoración: {
+                                selected.avgRating === 100 ? <p className='rate'>★★★★★</p> :
+                                    selected.avgRating >= 80 ? <p className='rate'>★★★★☆</p> :
+                                        selected.avgRating >= 60 ? <p className='rate'>★★★☆☆</p> :
+                                            selected.avgRating >= 40 ? <p className='rate'>★★☆☆☆</p> :
+                                                selected.avgRating >= 20 ? <p className='rate'>★☆☆☆☆</p> :
+                                                    selected.avgRating >= 0 ? <p className='rate'>☆☆☆☆☆</p> :
+                                                        selected.avgRating
+
+                            }</p>
+
+                            <p onClick={() => navigate(`/mireserva/${selected._id}`)} style={{
+                                fontWeight: 'bold',
+                            }}>Reservar ahora</p>
                         </>
 
                     </InfoWindow>

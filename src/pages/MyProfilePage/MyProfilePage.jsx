@@ -14,7 +14,6 @@ const MyProfilePage = () => {
 
                     <h1>Mi perfil</h1>
                     <UserProfile />
-                   
 
                 </Col>
                 
