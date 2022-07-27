@@ -1,3 +1,10 @@
 .formEdit {
     margin-bottom: 100px;
 }
+
+.btn-dark {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    margin-top: 20px;
+}

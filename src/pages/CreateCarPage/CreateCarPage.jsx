@@ -7,7 +7,7 @@ const CreateCarPage = () => {
 
         <Container>
 
-            <h1>Crear coches</h1>
+            <h1 className='titleEdit'>Crear coches</h1>
 
             <Container className='margin-creater-form'>
 

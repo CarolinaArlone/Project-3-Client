@@ -18,7 +18,7 @@ const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
 
     return (
 
-        <Card className="rounded mx-auto carCard" style={{ width: "18rem" }}>
+        <Card className="rounded mx-auto carCard">
             <Card.Header className="p-0">
                 <Card.Img variant="top" src={imageUrl} />
             </Card.Header>
@@ -28,13 +28,9 @@ const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
                 <Card.Text className="text-muted mb-1 text-description">{description}</Card.Text>
             </Card.Body>
             <Link to={`/editar-coche/${car_id}`}>
-                <div className="d-grid">
-                    <Button className='buttonCard edit' variant="outline-warning" size="sm" as="div">Editar</Button>
-                </div> <br />
+                <Button className='buttonCard' variant="outline-warning" size="sm" as="div">Editar</Button>
             </Link>
-            <div className="d-grid">
-                <Button className='buttonCard' onClick={handleDelete} variant="outline-danger" size="sm" as="div">Eliminar</Button>
-            </div>
+            <Button className='buttonCard' onClick={handleDelete} variant="outline-danger" size="sm" as="div">Eliminar</Button>
         </Card >
 
     )

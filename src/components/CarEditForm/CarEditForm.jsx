@@ -110,6 +110,7 @@ const CarEditForm = () => {
                             <Row>
 
                                 <Col>
+
                                     <Form.Group className="mb-3" >
                                         <Form.Label>Marca</Form.Label>
                                         <Form.Control type="text" name="brand" value={brand} onChange={handleInputChange} />
