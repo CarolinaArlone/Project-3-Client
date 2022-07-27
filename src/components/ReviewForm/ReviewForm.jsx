@@ -20,7 +20,12 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
 
     const handleRatingInput = e => {
         const { value } = e.target
+<<<<<<< HEAD
         setCarRating({ carRating: value })
+=======
+        setRate(value)
+
+>>>>>>> 9d8eaefbc3a5d7625ba2b579fda330e281d9dc7d
     }
 
     const handleSubmit = e => {
