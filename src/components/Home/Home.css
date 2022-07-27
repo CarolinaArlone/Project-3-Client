@@ -40,17 +40,20 @@
 
 .header {
     width: 100%;
-    height: 80px;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-image: url('https: //res.cloudinary.com/djs7qv2pt/image/upload/v1658734774/fondogoto_fme6si.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 
     position: relative
 }
 
-.header img {
+.header .bckg-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -61,10 +64,18 @@
     width: 40vw;
     padding-left: 40px;
     margin-top: 100px;
+}
 
-    position: absolute;
-    top: 0;
-    left: 0
+.right-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.right-content img {
+    width: 95%;
 }
 
 .stay-home {
@@ -75,7 +86,7 @@
     color: #3939b0;
 }
 
-h1 {
+.tittleHome {
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: 900;

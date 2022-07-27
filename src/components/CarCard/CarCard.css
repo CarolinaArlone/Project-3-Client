@@ -1,4 +1,26 @@
-.CoasterCard img {
-    height: 140px;
-    object-fit: cover
+.carCard {
+    object-fit: cover;
+    height: 50em;
+    margin-bottom: 3em;
 }
+
+.title-car-card {
+    font-size: 16px;
+}
+
+.text-description {
+    height: 100px;
+}
+
+.carCard img {
+    object-fit: cover;
+    max-height: 270px;
+}
+
+/* .buttonCard .edit:hover {
+    text-decoration: none;
+}
+
+button {
+    text-decoration: none;
+} */

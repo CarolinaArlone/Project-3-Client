@@ -17,6 +17,11 @@
     text-decoration: none;
 }
 
+.first-anchor {
+    margin-left: 400px;
+}
+
+
 /* @media screen and (max-width: 960px) {
     .Nav-menu {
         display: flex;

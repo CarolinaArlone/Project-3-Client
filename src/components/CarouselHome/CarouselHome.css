@@ -1,4 +1,23 @@
 .carousel-home {
-    height: 300px;
-    width: 700px;
+    height: max-content;
+    width: 100px;
+}
+
+.carousel-indicators {
+    display: none
+}
+
+
+/* .carousel-home img {
+    width: 100% !important;
+} */
+
+.carousel-cars {
+    width: 40%;
+}
+
+.carouselHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -17,7 +17,7 @@ const Navigation = () => {
 
     const isAdmin = () => {
         if (user?.role === 'ADMIN') {
-            return <Link className="text-decoration-none" to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
+            return <Link className="first-anchor text-decoration-none" to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
         }
     }
 
@@ -44,7 +44,7 @@ const Navigation = () => {
                             !user
                                 ?
                                 <>
-                                    <Link className="text-decoration-none" to='/registro' ><Nav.Link as="span">Únete</Nav.Link></Link>
+                                    <Link className="first-anchor text-decoration-none" to='/registro' ><Nav.Link as="span">Únete</Nav.Link></Link>
                                     <Link className="text-decoration-none" to='/iniciar-sesion'><Nav.Link as="span">Iniciar sesión</Nav.Link></Link>
                                 </>
                                 :
