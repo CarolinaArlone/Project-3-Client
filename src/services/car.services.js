@@ -39,13 +39,11 @@ class CarService {
     }
 
     addCarReview({ car_id, user_id, content }) {
-        console.log(car_id)
-
         return this.api.put(`/${car_id}/add-review/${user_id}`, content)
     }
 
-    addCarRating(car_id, rate) {
-        return this.api.put(`/${car_id}/add-car-rating`, rate)
+    addCarRating({ car_id, carRating }) {
+        return this.api.put(`/${car_id}/add-car-rating`, carRating)
     }
 
     bookedDates(car_id) {
