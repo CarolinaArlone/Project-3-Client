@@ -1,7 +1,7 @@
 import { Form, Button, Container } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import uploadService from '../../services/upload.services'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader'
 import userService from '../../services/user.services'
 import './EditUserProfile.css'

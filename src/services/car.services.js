@@ -38,8 +38,12 @@ class CarService {
         return this.api.delete(`/${car_id}/delete`)
     }
 
-    addCarReview(car_id) {
-        return this.api.put(`/${car_id}/add-review`)
+    addCarReview({ car_id, user_id, content }) {
+        return this.api.put(`/${car_id}/add-review/${user_id}`, content)
+    }
+
+    addCarRating({ car_id, carRating }) {
+        return this.api.put(`/${car_id}/add-car-rating`, carRating)
     }
 
     bookedDates(car_id) {
