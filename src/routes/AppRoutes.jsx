@@ -21,8 +21,8 @@ const AppRoutes = () => {
             <Route path="/miperfil/:user_id" element={<MyProfilePage />} />
             <Route path="/registro" element={<SignupPage />} />
             <Route path="/iniciar-sesion" element={<LoginPage />} />
-            <Route path="/lista-coches" element={<CarsListPage />} />
             <Route path="/editar-coche/:car_id" element={<CarEditPage />} />
+            <Route path="/lista-coches" element={<CarsListPage />} />
             <Route path="/crear" element={<PrivateRoute />}>
                 <Route path="" element={<CreateCarPage />} />
             </Route>

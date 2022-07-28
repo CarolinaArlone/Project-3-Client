@@ -31,7 +31,6 @@ const AuthProviderWrapper = (props) => {
     const logoutUser = () => {
         setUser(null)
         localStorage.removeItem('authToken')
-        navigate('/iniciar-sesion')
         setIsLoading(false)
     }
 
