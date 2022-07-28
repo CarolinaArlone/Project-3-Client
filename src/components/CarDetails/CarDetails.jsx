@@ -37,17 +37,15 @@ const CarDetails = ({
 
                         <MDBCardBody>
                             <MDBCardTitle>Detalles del coche {brand}, {model}</MDBCardTitle>
-                            <MDBCardText>
-                                <h3>Matricula: {plate}</h3>
-                            </MDBCardText>
-                            <MDBCardText>
+                            <MDBCardText><strong>Matricula: {plate}</strong></MDBCardText>
+                            <div>
                                 <p>Número de asientos: {seats}</p>
                                 <p>Descripción: {description} </p>
                                 <p>Tipo de combustible: {fuelType}</p>
                                 <p>Precio por día: {dayPrice} </p>
                                 <p>Tamaño del coche:{size}</p>
                                 <p>Transmisión: {transmission}</p>
-                            </MDBCardText>
+                            </div>
                         </MDBCardBody>
 
                         <MDBCardFooter>

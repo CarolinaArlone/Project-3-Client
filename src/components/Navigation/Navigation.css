@@ -27,7 +27,12 @@
     margin-left: 20px;
 }
 
- /* @media screen and (max-width: 960px) {
+.aux a {
+    width: 120px;
+    text-align: end;
+}
+
+/* @media screen and (max-width: 960px) {
     .Nav-menu {
         display: flex;
         flex-direction: column;
@@ -42,7 +47,7 @@
 
 } */
 
-    /* .Nav-menu .active {
+/* .Nav-menu .active {
         background: #1f1f68;
         left: 1138px;
         opacity: 1;
@@ -75,4 +80,4 @@
         color: white;
 
     }
-} */ 
+} */
