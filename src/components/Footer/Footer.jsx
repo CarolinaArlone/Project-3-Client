@@ -25,7 +25,7 @@ const Footer = () => {
                     <div className="box-footer">
                         <p className="title-footer"> <Link className="text-decoration-none" to="/registro">ÚNETE</Link></p>
                         <p>Crear cuenta</p>
-                        <p>Trabaja en GoTo</p>
+                        <p>Trabaja en Te-Llevo</p>
                     </div>
                     <div className="box-footer">
                         <p className="title-footer"> <Link className="text-decoration-none" to="/iniciar-sesion">INICIA SESIÓN</Link></p>

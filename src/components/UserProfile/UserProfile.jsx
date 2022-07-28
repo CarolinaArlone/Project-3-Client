@@ -81,7 +81,7 @@ const UserProfile = () => {
                 </Modal.Body>
             </Modal>
 
-            <h3>Mis reservas</h3>
+            <h3 className='textReservation'>Mis reservas</h3>
             {
                 bookingData.map(booking => {
                     const firstDate = new Date(booking.booking.startDate)
