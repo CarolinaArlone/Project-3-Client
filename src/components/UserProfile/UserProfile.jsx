@@ -88,7 +88,7 @@ const UserProfile = () => {
                             <Row>
                                 <Col md={8}>
                                     <h6>{firstDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} - {finalDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</h6>
-                                    <h6> {booking.car.brand} ({booking.car.plate})</h6>
+                                    <h6> {booking.car?.brand} ({booking.car?.plate})</h6>
                                 </Col>
 
                                 <Col md={4} className="btn-column">

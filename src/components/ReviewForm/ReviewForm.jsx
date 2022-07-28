@@ -17,7 +17,6 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
 
     const { user } = useContext(AuthContext)
     const [content, setContent] = useState('')
-    // const [carRating, setCarRating] = useState()
     const [ratingValue, setRatingValue] = useState(0)
     const navigate = useNavigate()
 
@@ -33,13 +32,6 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
         const { name, value } = e.target
         setContent({ ...content, [name]: value })
     }
-
-    /* const handleRatingInput = e => {
-        const { value } = e.target
-        setCarRating({ carRating: value })
-    } */
-
-    console.log(ratingValue)
 
     const handleRating = (rate) => {
         setRatingValue({ carRating: rate })

@@ -36,13 +36,15 @@ const Navigation = () => {
                         !user
                             ?
                             <>
-                                <Nav.Link className="first-anchor text-decoration-none" href='/registro' as="span">Únete</Nav.Link>
-                                <Nav.Link className="text-decoration-none" href='/iniciar-sesion' as="span">Iniciar sesión</Nav.Link>
+                                <Link className="first-anchor text-decoration-none" to='/registro'>Únete</Link>
+                                <Link className="text-decoration-none" to='/iniciar-sesion'>Iniciar sesión</Link>
                             </>
                             :
                             <>
                                 <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item className="text-decoration-none" href={`/miperfil/${user._id}`}>Perfil de {user.username}</NavDropdown.Item>
+                                    <Link to={`/miperfil/${user._id}`}>
+                                        <NavDropdown.Item className="text-decoration-none" as="span">Perfil de {user.username}</NavDropdown.Item>
+                                    </Link>
                                     {/* <Link to='/mireserva'><NavDropdown.Item as="span">Mi reserva</NavDropdown.Item></Link> */}
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={logout}>Cerrar sesión</NavDropdown.Item>

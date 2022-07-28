@@ -26,14 +26,13 @@ const CarEditForm = () => {
         seats: '',
         transmission: '',
         fuelType: '',
-        carRating: '',
         latitude: '',
         longitude: ''
     })
 
     const {
         brand, model, plate, description, imageUrl, dayPrice, size, seats,
-        transmission, fuelType, carRating, latitude, longitude
+        transmission, fuelType, latitude, longitude
     } = carData
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { CarContext } from '../../context/cars.context'
 import { useContext, useState, useEffect } from 'react'
 import CarDetails from '../../components/CarDetails/CarDetails'
@@ -8,8 +8,9 @@ import DatePicker from '../../components/Calendar/Calendar'
 const BookingPage = () => {
 
     const { getOneCar } = useContext(CarContext)
-    const [carData, setCarData] = useState({})
+    const [carData, setCarData] = useState()
     const { car_id } = useParams()
+
 
     useEffect(() => {
 
@@ -17,7 +18,7 @@ const BookingPage = () => {
             .then(({ data }) => {
                 const {
                     reviews, brand, model, plate, description, imageUrl, dayPrice, size, seats,
-                    transmission, fuelType, carRating, location
+                    transmission, fuelType, location, avgRating, carRatings
                 } = data
 
                 const [latitude, longitude] = location.coordinates
@@ -34,9 +35,10 @@ const BookingPage = () => {
                     seats,
                     transmission,
                     fuelType,
-                    carRating,
                     latitude,
-                    longitude
+                    longitude,
+                    avgRating,
+                    carRatings
                 }
                 setCarData(editedCar)
             })
@@ -48,18 +50,18 @@ const BookingPage = () => {
 
         <Container>
 
-            <Row>
+            <div className='bookingContainer'>
 
-                <Col>
+                <div className='carInfo' >
                     <h1>Reserva</h1>
-                    <CarDetails {...carData} />
-                </Col>
+                    {carData && <CarDetails {...carData} />}
+                </div>
 
-                <Col>
+                <div className='calendar'>
                     <DatePicker car_id={car_id} />
-                </Col>
+                </div>
 
-            </Row>
+            </div>
 
         </Container>
 
