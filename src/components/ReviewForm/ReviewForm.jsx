@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import carService from '../../services/car.services'
 import { Rating } from 'react-simple-star-rating'
+import './ReviewForm.css'
 import {
     MdOutlineSentimentDissatisfied,
     MdOutlineSentimentNeutral,
@@ -90,7 +91,7 @@ const ReviewForm = ({ car_id, fireFinalActions }) => {
                 <Form.Control className="mb-3" name='content' as="textarea" rows={3} onChange={handleInput} />
 
                 <div className="d-grid mb-4">
-                    <Button variant="dark" type="submit">Crear reseña</Button>
+                    <Button className='buttonReviewForm' variant="dark" type="submit">Crear reseña</Button>
                 </div>
             </Form>
 

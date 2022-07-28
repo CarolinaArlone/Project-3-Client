@@ -1,3 +1,18 @@
 .formEdit {
     margin-bottom: 20px;
 }
+
+.buttonEditForm {
+    background-color: #6454a3;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+.buttonEditForm:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #6454a3;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}

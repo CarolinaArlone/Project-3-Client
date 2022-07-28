@@ -11,16 +11,16 @@ const MyProfilePage = () => {
 
             <Row>
 
-                <Col>
+                <Col md={{ span: 4 }}>
 
-                    <h1>Mi perfil</h1>
+                    <h1 className='texFont'>Mi perfil</h1>
                     <UserProfile />
 
                 </Col>
-                
-                <Col>
+
+                <Col md={{ span: 7, offset: 1 }}>
                     <div className='profile-map'>
-                    <MapContainer />
+                        <MapContainer />
                     </div>
                 </Col>
             </Row>

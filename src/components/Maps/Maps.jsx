@@ -11,7 +11,7 @@ const MapContainer = () => {
     const mapStyles = {
         height: "100vh",
         width: "100%",
-        
+
     }
 
     const defaultCenter = {
@@ -24,13 +24,13 @@ const MapContainer = () => {
         <LoadScript googleMapsApiKey='AIzaSyDLf7y6k5PGx_cjdDPGxNq8wy7UDjKTajo'>
 
             <GoogleMap
-                mapContainerStyle={mapStyles = retro}
+                mapContainerStyle={mapStyles}
                 zoom={12}
                 center={defaultCenter}>
-                    
+
 
                 <MapMarker />
-                
+
             </GoogleMap>
 
         </LoadScript>

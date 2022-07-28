@@ -7,13 +7,10 @@
     display: none
 }
 
-
-/* .carousel-home img {
-    width: 100% !important;
-} */
-
 .carousel-cars {
-    width: 40%;
+    width: 30%;
+    margin-top: 105px;
+    margin-bottom: 50px;
 }
 
 .carouselHome {

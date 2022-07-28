@@ -54,17 +54,20 @@ const UserProfile = () => {
 
         <>
             {!formOpen ?
+                <>
+                    <Row>
 
-                < Card className="rounded mx-auto userProfile" >
-                    <Card.Header className="p-0">
-                        <Card.Img variant="top" src={userData.profileImg} />
-                    </Card.Header>
-                    <Card.Body>
-                        <Card.Title className="text-dark title-userProfile-card">{userData.username}</Card.Title>
-                        <Card.Text className="text-dark title-userProfile-card">{userData.email}</Card.Text>
-                        <Button className='buttonProfile' onClick={formOpenHandler} variant="primary">Editar</Button>
-                    </Card.Body >
-                </Card >
+                        <Col>
+                            <div className="profilePicture" style={{ backgroundImage: `url(${userData.profileImg})` }}></div>
+                        </Col>
+
+                        <Col>
+                            <h2 className='textFont'>{userData.username}</h2>
+                            <h4 className='userEmail'>{userData.email}</h4>
+                            <Button className='buttonProfile' onClick={formOpenHandler} variant="primary">Editar</Button>
+                        </Col>
+                    </Row>
+                </>
                 :
                 <EditUserProfile formOpenHandler={formOpenHandler} refreshUser={loadUserInfo} />
             }

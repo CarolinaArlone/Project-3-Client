@@ -88,7 +88,7 @@ const EditUserProfile = ({ formOpenHandler, refreshUser }) => {
                                 <Form.Control type="file" onChange={uploadUserImage} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}
+                            <Button className='buttonEditUserProfile' variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}
 
                             </Button>
                         </Form>
