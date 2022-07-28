@@ -17,7 +17,12 @@ const Navigation = () => {
 
     const isAdmin = () => {
         if (user?.role === 'ADMIN') {
-            return <Link className="first-anchor text-decoration-none" to='/crear'><Nav.Link as="span">Crear coche</Nav.Link></Link>
+            return (
+                <>
+                    <Nav.Link className="text-decoration-none" href='/crear'>Crear coche</Nav.Link>
+                    <Nav.Link className="text-decoration-none" href='/lista-coches'>Lista coches</Nav.Link>
+                </>
+            )
         }
     }
 
@@ -29,7 +34,7 @@ const Navigation = () => {
 
             <Navbar.Collapse id="responsive-navbar-nav">
 
-                <Nav className="ms-auto navbar-option">
+                <Nav className="ms-auto navbar-option aux">
 
                     {isAdmin()}
                     {

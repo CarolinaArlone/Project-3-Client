@@ -227,7 +227,7 @@ const CarEditForm = () => {
                                 <Form.Control type="file" onChange={uploadCarImage} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}</Button>
+                            <Button className='buttonEditForm' variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Un momento...' : 'guardar cambios'}</Button>
                         </Form>
                     </Container>
             }

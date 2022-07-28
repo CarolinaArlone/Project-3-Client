@@ -3,6 +3,7 @@ import { useState, useContext } from "react"
 import { useNavigate } from 'react-router-dom'
 import { CarContext } from '../../../context/cars.context'
 import { useParams } from 'react-router-dom'
+import './MapMarker.css'
 
 const MapMarker = () => {
 
@@ -46,15 +47,15 @@ const MapMarker = () => {
                     >
 
                         <>
-                            <h6>{selected.brand}</h6>
+                            <h6 className='markerCss'>{selected.brand}</h6>
 
                             <img src={selected.imageUrl} alt="imagen coche" style={{
-                                width: '60px', 
+                                width: '60px',
                             }} /> <br />
 
-                            <p>Precio: {selected.dayPrice}€</p>
+                            <p className='markerCss'>Precio: {selected.dayPrice}€</p>
 
-                            <p>Valoración: {
+                            <p className='markerCss'>Valoración: {
                                 selected.avgRating === 100 ? <p className='rate'>★★★★★</p> :
                                     selected.avgRating >= 80 ? <p className='rate'>★★★★☆</p> :
                                         selected.avgRating >= 60 ? <p className='rate'>★★★☆☆</p> :
@@ -65,7 +66,7 @@ const MapMarker = () => {
 
                             }</p>
 
-                            <p onClick={() => navigate(`/mireserva/${selected._id}`)} style={{
+                            <p className='markerCss' onClick={() => navigate(`/mireserva/${selected._id}`)} style={{
                                 fontWeight: 'bold',
                             }}>Reservar ahora</p>
                         </>

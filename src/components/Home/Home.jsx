@@ -14,7 +14,8 @@ const Home = () => {
 
         <>
 
-                <Container>
+            <Container>
+                <div data-aos="zoom-in">
                     <Row>
                         <Col>
                             <div className='left-content'>
@@ -29,11 +30,13 @@ const Home = () => {
 
                         <Col className="right-content">
                             <div className="img-second">
-{/*                                 <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png" alt="image" />
+                                {/*                                 <img className='img-second' src="https://res.cloudinary.com/djs7qv2pt/image/upload/v1658670846/vvjcj2edhbfytiecmuh6.png" alt="image" />
  */}                            </div>
+
                         </Col>
                     </Row>
-                </Container>
+                </div>
+            </Container>
 
         </>
     )

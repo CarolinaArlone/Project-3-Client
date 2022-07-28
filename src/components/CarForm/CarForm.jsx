@@ -178,9 +178,7 @@ const CarForm = () => {
                     <Form.Control type="text" value={description} onChange={handleChange} name="description" />
                 </Form.Group>
 
-                <div className="d-grid">
-                    <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Un momento, por favor...' : 'Crear coche'}</Button>
-                </div>
+                <Button className='buttonCreateForm' variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Un momento, por favor...' : 'Crear coche'}</Button>
             </Form>
         </div>
     )
