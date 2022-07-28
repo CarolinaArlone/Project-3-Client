@@ -12,7 +12,11 @@ const HomePage = () => {
 
             <Home />
             <CarouselHome />
-            <Maps />
+
+            <div className="margin-map-home">
+                <Maps />
+            </div>
+            
 
         </>
 
