@@ -1,18 +1,6 @@
-/* .Navigation {
-  background-color: #1f1f68 !important;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap');
 
 
-
-/* .img-logo img {
-  width: 18%;
-} */
-
-/* .navbar-option span {
-  text-align: center;
-  width: 120px;
-} */
-
-/* .margin-creater-form {
-  margin-bottom: 100px;
-} */
+body {
+  font-family: 'Manrope', sans-serif;
+}
