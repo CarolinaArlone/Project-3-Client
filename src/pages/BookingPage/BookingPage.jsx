@@ -1,9 +1,12 @@
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { CarContext } from '../../context/cars.context'
 import { useContext, useState, useEffect } from 'react'
 import CarDetails from '../../components/CarDetails/CarDetails'
 import { useParams } from 'react-router-dom'
 import DatePicker from '../../components/Calendar/Calendar'
+import Reviewcard from '../../components/ReviewCard/ReviewCard'
+import './BookingPage.css'
+
 
 const BookingPage = () => {
 
@@ -49,21 +52,30 @@ const BookingPage = () => {
     return (
 
         <Container>
+            <Row className='mb-5'>
 
-            <div className='bookingContainer'>
+                <Col md={{ span: 6 }} >
+                    <div >
+                        <h1 className='mt-3'>Tu reserva</h1>
+                        {carData && <CarDetails {...carData} />}
+                    </div>
+                </Col>
 
-                <div className='carInfo' >
-                    <h1>Reserva</h1>
-                    {carData && <CarDetails {...carData} />}
-                </div>
+                <Col md={{ span: 6 }} className='calendar'>
+                    <div>
+                        {carData && <DatePicker car_id={car_id} />}
+                    </div>
+                </Col>
 
-                <div className='calendar'>
-                    <DatePicker car_id={car_id} />
-                </div>
-
+            </Row>
+            <div>
+                <h1>Reseñas</h1>
+                <Row>
+                    {carData && <Reviewcard {...carData} />}
+                </Row>
             </div>
 
-        </Container>
+        </Container >
 
     )
 }

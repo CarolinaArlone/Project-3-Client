@@ -1,3 +1,8 @@
 .carImg img {
     width: 10%;
 }
+
+.carDetails  {
+    margin-top: 20px;
+    border: none;
+}

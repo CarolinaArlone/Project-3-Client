@@ -42,17 +42,15 @@ const DatePicker = ({ car_id }) => {
 
     return (
         <Container>
-            {/* <p>{startDate.toDateString()} - {endDate.toDateString()}</p><br /> */}
-            <DateRange
+            <DateRange className='picker mb-5'
                 moveRangeOnFirstSelection={false}
                 ranges={ranges}
                 onChange={handleSelect}
                 showDateDisplay={true}
-                // Use your current booking dates to disable dates in the calendar
                 disabledDates={bookedDates}
                 minDate={new Date()}
-            /* {...props} */
             />
+            <h3 className="mb-5">Datos de tu reserva</h3>
             <TotalPay car_id={car_id} ranges={ranges} />
             <BookingButton ranges={ranges} car_id={car_id} />
         </Container>

@@ -19,7 +19,6 @@ const BookingButton = ({ ranges, car_id }) => {
             .createBooking(car_id, { startDate, endDate, user })
             .then(() => navigate('/pago'))
             .catch(err => console.log(err.message))
-            // (`/miperfil/${user._id}`)
     }
 
     return (
