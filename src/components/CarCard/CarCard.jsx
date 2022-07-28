@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CarContext } from '../../context/cars.context'
 
 
-const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
+const CarCard = ({ brand, plate, model, description, imageUrl, _id: car_id }) => {
 
     const { deleteCar } = useContext(CarContext)
     const navigate = useNavigate()
@@ -25,6 +25,7 @@ const CarCard = ({ brand, model, description, imageUrl, _id: car_id }) => {
             <Card.Body>
                 <Card.Title className="text-dark title-car-card">{brand}</Card.Title>
                 <Card.Text className="text-dark text-car-card">{model}</Card.Text>
+                <Card.Text className="text-dark text-car-card">Matricula: {plate}</Card.Text>
                 <Card.Text className="text-muted mb-1 text-description">{description}</Card.Text>
             </Card.Body>
             <Link to={`/editar-coche/${car_id}`}>
